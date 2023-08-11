@@ -18,14 +18,12 @@ public class TripController {
 	public String index() {
 		return "/WEB-INF/index/index.jsp";
 	}
-<<<<<<< HEAD
+
 	
 	@RequestMapping("/content")
 	public String content() {
 		return "/WEB-INF/content/content.jsp";
 	}
-	
-=======
 	//로그인 창
 	@RequestMapping("/login")
 	public String login() {
@@ -45,5 +43,4 @@ public class TripController {
 		mv.setViewName("/WEB-INF/account/signupProc.jsp");
 		return mv;
 	}//signupProc
->>>>>>> branch 'master' of https://github.com/dotPu/tripindex.git
 }
