@@ -1,7 +1,7 @@
 create table tripaccount(
 	id varchar2(12) primary key,
 	password varchar2(12) not null,
-	name varchar2(15) not null,
+	name varchar2(50) not null,
 	email varchar2(30) not null,
 	address varchar2(50) not null,
 	gender char(1),
@@ -10,3 +10,5 @@ create table tripaccount(
 	CONSTRAINT check_type CHECK (accountType IN (1, 2, 3)),
 	birthday DATE
 );
+
+drop table tripaccount
