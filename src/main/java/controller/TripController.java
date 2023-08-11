@@ -8,7 +8,7 @@ public class TripController {
 
 	@RequestMapping("/")
 	public String index() {
-		return "/WEB-INF/indexProc.jsp";
+		return "/WEB-INF/index/index.jsp";
 	}
 	
 	
