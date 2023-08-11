@@ -24,6 +24,12 @@ public class TripController {
 	public String content() {
 		return "/WEB-INF/content/content.jsp";
 	}
+	
+	@RequestMapping("/searchContent")
+	public String searchcontentContent() {
+		return "/WEB-INF/searchContent/searchContent.jsp";
+	}
+	
 	//로그인 창
 	@RequestMapping("/login")
 	public String login() {
