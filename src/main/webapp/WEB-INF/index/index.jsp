@@ -24,10 +24,6 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   
-<script>
-	alert(${indexinfo.addr1[1]})
-</script>
-  
 </head>
 <body>
 <!-- HIDDEN PANEL 
@@ -106,94 +102,9 @@
 </div>
 <!-- SLIDER 
 ================================================== -->
-<div id="ei-slider" class="ei-slider">
-	<ul class="ei-slider-large">
-		<li>
-		<img src="/img/logo.jpg" alt="image01" class="responsiveslide">
-		<div class="ei-title">
-			<h2>Dare to</h2>
-			<h3>꿈</h3>
-		</div>
-		</li>
-		<li>
-		<img src="/img/logo.jpg" alt="image02" class="responsiveslide">
-		<div class="ei-title">
-			<h2>Dare to</h2>
-			<h3>희망</h3>
-		</div>
-		</li>
-		<li>
-		<img src="/img/logo.jpg" alt="image03" class="responsiveslide">
-		<div class="ei-title">
-			<h2>Dare to</h2>
-			<h3>웃음</h3>
-		</div>
-		</li>
-		<li>
-		<img src="/img/logo.jpg" alt="image04" class="responsiveslide">
-		<div class="ei-title">
-			<h2>Dare to</h2>
-			<h3>청춘</h3>
-		</div>
-		</li>
-		<li>
-		<img src="/img/logo.jpg" alt="image05" class="responsiveslide">
-		<div class="ei-title">
-			<h2>Dare to</h2>
-			<h3>설레임</h3>
-		</div>
-		</li>
-		<li>
-		<img src="/img/logo.jpg" alt="image06" class="responsiveslide">
-		<div class="ei-title">
-			<h2>Dare to</h2>
-			<h3>새로움</h3>
-		</div>
-		</li>
-		<li>
-		<img src="/img/logo.jpg" alt="image07" class="responsiveslide">
-		<div class="ei-title">
-			<h2>Dare to</h2>
-			<h3>가족</h3>
-		</div>
-		</li>
-		<li>
-		<img src="/img/logo.jpg" alt="image08" class="responsiveslide">
-		<div class="ei-title">
-			<h2>Dare to </h2>
-			<h3>사랑</h3>
-		</div>
-		</li>
-		<li>
-		<img src="/img/logo.jpg" alt="image09" class="responsiveslide">
-		<div class="ei-title">
-			<h2>Dare to</h2>
-			<h3>선물</h3>
-		</div>
-		</li>
-		<li>
-		<img src="/img/logo.jpg" alt="image10" class="responsiveslide">
-		<div class="ei-title">
-			<h2>Dare to</h2>
-			<h3>삶</h3>
-		</div>
-		</li>
-	</ul>
-	<!-- slider-thumbs -->
-	<ul class="ei-slider-thumbs">
-		<li class="ei-slider-element">Current</li>
-		<li><a href="#">Slide 1</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb01"/></li>
-		<li><a href="#">Slide 2</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb02"/></li>
-		<li><a href="#">Slide 3</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb03"/></li>
-		<li><a href="#">Slide 4</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb04"/></li>
-		<li><a href="#">Slide 5</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb05"/></li>
-		<li><a href="#">Slide 6</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb06"/></li>
-		<li><a href="#">Slide 7</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb07"/></li>
-		<li><a href="#">Slide 8</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb08"/></li>
-		<li><a href="#">Slide 9</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb09"/></li>
-		<li><a href="#">Slide 10</a><img src="http://placehold.it/150x59/444" class="slideshowthumb" alt="thumb10"/></li>
-	</ul>
-</div>
+
+<jsp:include page="/WEB-INF/index/indexslide.jsp"/>
+
 <div class="minipause">
 </div>
 <!-- SUBHEADER
@@ -319,42 +230,9 @@
 </div>
 <!-- CONTENT 
 ================================================== -->
-<div class="row">
-	<div class="twelve columns">
-		<div class="centersectiontitle">
-			<h4>이런곳은 어떠세요?</h4>
-		</div>
-	</div>
-	<div class="four columns">
-		<h5>Photography</h5>
-		<p>
-			 Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.
-		</p>
-		<p>
-			<a href="#" class="readmore">Learn more</a>
-		</p>
-	</div>
-	<div class="four columns">
-		<h5>Artwork</h5>
-		<p>
-			 Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.
-		</p>
-		<p>
-			<a href="#" class="readmore">Learn more</a>
-		</p>
-	</div>
-	<div class="four columns">
-		<h5>Logos</h5>
-		<p>
-			 Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.
-		</p>
-		<p>
-			<a href="#" class="readmore">Learn more</a>
-		</p>
-	</div>
-</div>
-<div class="hr">
-</div>
+
+<jsp:include page="/WEB-INF/index/indexcard.jsp"/>
+
 <!-- TESTIMONIALS 
 ================================================== -->
 <div class="row">
