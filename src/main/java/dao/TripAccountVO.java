@@ -8,7 +8,7 @@ public class TripAccountVO {
 	String email;
 	String address;//주소
 	String gender;//성별
-	String accountType;//계정타입 0:관리자, 1:사업자, 2:일반회원
+	int accountType;//계정타입 1:관리자, 2:사업자, 3:일반회원
 	String birthday;
 	
 	public TripAccountVO() {
@@ -63,11 +63,11 @@ public class TripAccountVO {
 		this.gender = gender;
 	}
 
-	public String getAccountType() {
+	public int getAccountType() {
 		return accountType;
 	}
 
-	public void setAccountType(String accountType) {
+	public void setAccountType(int accountType) {
 		this.accountType = accountType;
 	}
 
@@ -80,7 +80,7 @@ public class TripAccountVO {
 	}
 
 	public TripAccountVO(String id, String password, String name, String email, String address, String gender,
-			String accountType, String birthday) {
+			int accountType, String birthday) {
 		super();
 		this.id = id;
 		this.password = password;

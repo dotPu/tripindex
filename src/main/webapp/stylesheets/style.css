@@ -209,7 +209,7 @@ object,embed { height: 100% }
 img { -ms-interpolation-mode: bicubic }
 #map_canvas img,.map_canvas img { max-width: none!important }
 /* Nicolas Gallagher's micro clearfix */
-.row { *zoom: 1  }
+.row { *zoom: 1;}
 .row:before,.row:after { content: ""; display: table; }
 .row:after { clear: both }
 /* Block Grids ---------------------- */
