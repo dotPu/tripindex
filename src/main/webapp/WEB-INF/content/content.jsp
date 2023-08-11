@@ -12,7 +12,7 @@
 <meta charset="utf-8"/>
 <!-- Set the viewport width to device width for mobile -->
 <meta name="viewport" content="width=device-width"/>
-<title>여행 도우미</title>
+<title>여행도우미</title>
 <!-- CSS Files-->
 <link rel="stylesheet" href="stylesheets/style.css">
 
@@ -23,7 +23,6 @@
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  
 </head>
 <body>
 <!-- HIDDEN PANEL 
@@ -33,7 +32,7 @@
 		<div class="twelve columns">
 			<img src="http://www.wowthemes.net/demo/studiofrancesca/images/info.png" class="pics" alt="info">
 			<div class="infotext">
-				 방문해 주셔서 감사합니다!
+				 방문해주셔서 감사합니다!
 			</div>
 		</div>
 	</div>
@@ -100,171 +99,53 @@
 </div>
 <div class="clear">
 </div>
-<!-- SLIDER 
-================================================== -->
-
-<jsp:include page="/WEB-INF/index/indexslide.jsp"/>
-
-<div class="minipause">
-</div>
 <!-- SUBHEADER
 ================================================== -->
 <div id="subheader">
 	<div class="row">
 		<div class="twelve columns">
-			<p class="text-center">
-				 전국팔도의 관광정보를 한눈에!
+			<p class="left">
+				 전국 방방곡곡
+			</p>
+			<p class="right">
+				 여행돌이와 함께!
 			</p>
 		</div>
 	</div>
 </div>
-<!-- ANIMATED COLUMNS 
-================================================== -->
-<div class="row">
-	<div class="twelve columns">
-		<ul class="ca-menu">
-			<li>
-			<a href="#">
-			<span class="ca-icon"><i class="fa fa-heart"></i></span>
-			<div class="ca-content">
-				<h2 class="ca-main">서울<br/> 관광정보</h2>
-				<h3 class="ca-sub">서울 관광정보 바로보기</h3>
-			</div>
-			</a>
-			</li>
-			<li>
-			<a href="#">
-			<span class="ca-icon"><i class="fa fa-bullhorn"></i></span>
-			<div class="ca-content">
-				<h2 class="ca-main">인천<br/> 관광정보</h2>
-				<h3 class="ca-sub">인천 관광정보 바로보기</h3>
-			</div>
-			</a>
-			</li>
-			<li>
-			<a href="#">
-			<span class="ca-icon"><i class="fa fa-user"></i></span>
-			<div class="ca-content">
-				<h2 class="ca-main">경기<br/> 관광정보</h2>
-				<h3 class="ca-sub">경기 관광정보 바로보기</h3>
-			</div>
-			</a>
-			</li>
-			<li>
-			<a href="#">
-			<span class="ca-icon"><i class="fa fa-camera"></i></span>
-			<div class="ca-content">
-				<h2 class="ca-main">강원<br/> 관광정보</h2>
-				<h3 class="ca-sub">강원 관광정보 바로보기</h3>
-			</div>
-			</a>
-			</li>
-		</ul>
-	</div>
-</div>
-<div class="row">
-	<div class="twelve columns">
-		<ul class="ca-menu">
-			<li>
-			<a href="#">
-			<span class="ca-icon"><i class="fa fa-heart"></i></span>
-			<div class="ca-content">
-				<h2 class="ca-main">충청북도<br/> 관광정보</h2>
-				<h3 class="ca-sub">충청북도 관광정보 바로보기</h3>
-			</div>
-			</a>
-			</li>
-			<li>
-			<a href="#">
-			<span class="ca-icon"><i class="fa fa-bullhorn"></i></span>
-			<div class="ca-content">
-				<h2 class="ca-main">충청남도<br/> 관광정보</h2>
-				<h3 class="ca-sub">충청남도 관광정보 바로보기</h3>
-			</div>
-			</a>
-			</li>
-			<li>
-			<a href="#">
-			<span class="ca-icon"><i class="fa fa-user"></i></span>
-			<div class="ca-content">
-				<h2 class="ca-main">경상북도<br/> 관광정보</h2>
-				<h3 class="ca-sub">경상북도 관광정보 바로보기</h3>
-			</div>
-			</a>
-			</li>
-			<li>
-			<a href="#">
-			<span class="ca-icon"><i class="fa fa-camera"></i></span>
-			<div class="ca-content">
-				<h2 class="ca-main">경상남도<br/> 관광정보</h2>
-				<h3 class="ca-sub">경상남도 관광정보 바로보기</h3>
-			</div>
-			</a>
-			</li>
-		</ul>
-	</div>
-</div>
-<div class="row">
-	<div class="twelve columns">
-		<ul class="ca-menu">
-			<li>
-			<a href="#">
-			<span class="ca-icon"><i class="fa fa-heart"></i></span>
-			<div class="ca-content">
-				<h2 class="ca-main">전라북도<br/> 관광정보</h2>
-				<h3 class="ca-sub">전라북도 관광정보 바로보기</h3>
-			</div>
-			</a>
-			</li>
-			<li>
-			<a href="#">
-			<span class="ca-icon"><i class="fa fa-bullhorn"></i></span>
-			<div class="ca-content">
-				<h2 class="ca-main">전라남도<br/> 관광정보</h2>
-				<h3 class="ca-sub">전라남도 관광정보 바로보기</h3>
-			</div>
-			</a>
-			</li>
-			<li>
-			<a href="#">
-			<span class="ca-icon"><i class="fa fa-heart"></i></span>
-			<div class="ca-content">
-				<h2 class="ca-main">제주도<br/> 관광정보</h2>
-				<h3 class="ca-sub">제주도 관광정보 바로보기</h3>
-			</div>
-			</a>
-			</li>
-		</ul>
-	</div>
+<div class="hr">
 </div>
 <!-- CONTENT 
 ================================================== -->
-
-<jsp:include page="/WEB-INF/index/indexcard.jsp"/>
-
-<!-- TESTIMONIALS 
-================================================== -->
 <div class="row">
+    <!-- GOOGLE MAP IFRAME -->
 	<div class="twelve columns">
-		<div id="testimonials">
-			<blockquote>
-				<p>
-					 인생은 짧고,세상은 넓다 그러므로 세상 탐험은 빨리 시작하는것이 좋다 -사이먼레이븐     
-				</p>
-			</blockquote>
-			<blockquote>
-				<p>
-					 여행은 정신을 다시 젊어지게 하는 샘이다 -안데르센      
-				</p>
-			</blockquote>
-			<blockquote>
-				<p>
-					자식을 성공시키려면 일찍부터 여행을 보내라 -서양속담     
-				</p>
-			</blockquote>
-		</div>
-		<!--end testimonials-->
+		<jsp:include page="/WEB-INF/content/contentMap.jsp"/>	
 	</div>
+</div>
+<div class="row">
+	<!-- CONTACT FORM -->
+	<div class="twelve columns">
+		<div class="wrapcontact">
+			<h5>전국 방방곡곡 여행돌이</h5>
+					
+				<form method="post" action="contact.php" id="contactform">
+				<div class="form">
+				    <div class="six columns noleftmargin">
+					<h1>상세정보</h1>
+					<input type="text" name="name" class="smoothborder" placeholder="타이틀"/>
+					</div>
+					<br>
+					
+					<textarea name="comment" class="smoothborder ctextarea" rows="14" placeholder="상세정보"></textarea>
+					
+				</div>
+				</form>			
+		</div>
+	</div>
+												
+</div>
+<div class="hr">
 </div>
 
 <!-- FOOOTER 
@@ -276,7 +157,7 @@
 	</p>
 	<div class="four columns">
 		<h1>ABOUT US</h1>
-		 회사소개
+		 Our goal is to keep clients satisfied!
 	</div>
 	<div class="four columns">
 		<h1>GET SOCIAL</h1>
@@ -302,20 +183,18 @@
 <div class="copyright">
 	<div class="row">
 		<div class="six columns">
-			 &copy;<span class="small"> Copyright Your Agency Name</span>
+			 &copy;<span class="small"> Copyright 2015 Your Agency Name</span>
 		</div>
 		<div class="six columns">
-			<span class="small floatright">Design by <a target="_blank" href="http://www.wowthemes.net/premium-themes-templates/">WowThemesNet</a> </span>
+			<span class="small floatright"> Template by <a href="www.wowthemes.net">WowThemes.net</a></span>
 		</div>
 	</div>
 </div>
 <!-- JAVASCRIPTS 
 ================================================== -->
 <!-- Javascript files placed here for faster loading -->
-<script src="javascripts/foundation.min.js"></script>   
-<script src="javascripts/jquery.easing.1.3.js"></script>
-<script src="javascripts/elasticslideshow.js"></script>
-<script src="javascripts/jquery.carouFredSel-6.0.5-packed.js"></script>
+<script src="javascripts/foundation.min.js"></script>
+<script src="javascripts/formvalidation.js"></script>
 <script src="javascripts/jquery.cycle.js"></script>
 <script src="javascripts/app.js"></script>
 <script src="javascripts/modernizr.foundation.js"></script>
@@ -324,5 +203,8 @@
 <script src="javascripts/hoverIntent.js"></script>
 <script src="javascripts/superfish.js"></script>
 <script src="javascripts/responsivemenu.js"></script>
+<script src="javascripts/jquery.tweet.js"></script>
+
+
 </body>
 </html>

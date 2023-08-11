@@ -11,6 +11,9 @@ public class TripController {
 		return "/WEB-INF/index/index.jsp";
 	}
 	
-	
+	@RequestMapping("/content")
+	public String content() {
+		return "/WEB-INF/content/content.jsp";
+	}
 	
 }

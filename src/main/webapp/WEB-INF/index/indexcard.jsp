@@ -1,40 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
 <script>
 var locationtext;
-const randomnum1 = Math.floor(Math.random()*(11-1)+1);
+const randomnum2 = Math.floor(Math.random()*(11-1)+1);
 var totalCount;
 
-if(randomnum1 == 1){
+if(randomnum2 == 1){
 	locationtext = 1;
 }
-else if(randomnum1 == 2){
+else if(randomnum2 == 2){
 	locationtext = 2;
 }
-else if(randomnum1 == 3){
+else if(randomnum2 == 3){
 	locationtext = 31;
 }
-else if(randomnum1 == 4){
+else if(randomnum2 == 4){
 	locationtext = 32;
 }
-else if(randomnum1 == 5){
+else if(randomnum2 == 5){
 	locationtext = 33;
 }
-else if(randomnum1 == 6){
+else if(randomnum2 == 6){
 	locationtext = 34;
 }
-else if(randomnum1 == 7){
+else if(randomnum2 == 7){
 	locationtext = 35;
 }
-else if(randomnum1 == 8){
+else if(randomnum2 == 8){
 	locationtext = 36;
 }
-else if(randomnum1 == 9){
+else if(randomnum2 == 9){
 	locationtext = 37;
 }
-else if(randomnum1 == 10){
+else if(randomnum2 == 10){
 	locationtext = 38;
 }
 else {
@@ -55,13 +54,13 @@ $.ajax({
 		
 		$.ajax({
 			type:'get',
-			url:'https://apis.data.go.kr/B551011/KorService1/areaBasedList1?numOfRows=10&pageNo='+totalCount+'&MobileOS=ETC&MobileApp=AppTest&_type=json&areaCode='+locationtext+'&serviceKey=ASFMkt7oBR3EQtEzt2OHaPCqKJcrsqtwQVcbkNzSEB5d4xFv10CRJdwfBQUCRIj54jwEwBm3si2evB%2FlGXj4vQ%3D%3D',
+			url:'https://apis.data.go.kr/B551011/KorService1/areaBasedList1?numOfRows=3&pageNo='+totalCount+'&MobileOS=ETC&MobileApp=AppTest&_type=json&areaCode='+locationtext+'&serviceKey=ASFMkt7oBR3EQtEzt2OHaPCqKJcrsqtwQVcbkNzSEB5d4xFv10CRJdwfBQUCRIj54jwEwBm3si2evB%2FlGXj4vQ%3D%3D',
 			dataType: "json",
 			success:function(result){
 				for(var i=0; i<3; i++){
-					$.("#cardtitle"+(i+1)).text(result.response.body.items.item[i].title)
-					$.("#cardcontent"+(i+1)).text(result.response.body.items.item[i].addr1)
-					
+					$("#cardtitle"+(i+1)).text(result.response.body.items.item[i].title)
+					$("#cardcontent"+(i+1)).text(result.response.body.items.item[i].addr1)
+
 				}
 			}
 		});
