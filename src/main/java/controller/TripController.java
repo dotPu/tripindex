@@ -76,9 +76,6 @@ public class TripController {
 			prev = 1;
 		}
 		
-		
-		System.out.println("currentP:"+currentPage+",pageGroup:"+pageGroup+",startP:"+startPage+",lastP:"+lastPage+",next:"+next+",prev:"+prev);
-		
 		mv.addObject("startPage",startPage);
 		mv.addObject("lastPage",lastPage);
 		mv.addObject("next",next);
