@@ -124,7 +124,7 @@
 	<div class="twelve columns">
 		<ul class="ca-menu">
 			<li>
-			<a href="#">
+			<a href="/areaSearchTotalCount?areaCode=1">
 			<span class="ca-icon"><i class="fa fa-heart"></i></span>
 			<div class="ca-content">
 				<h2 class="ca-main">서울<br/> 관광정보</h2>
