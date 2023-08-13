@@ -83,14 +83,16 @@
 			</ul>
 			</li>
 			<li>
-			<a href="contact.html">로그인</a>
+			<a href="/login">로그인</a>
 			</li>
 			<li>
-			<a href="contact.html">회원가입</a>
+			<a href="/signup">회원가입</a>
 			</li>
+<!-- 			로그인되면 c:if문으로 출력예정
 			<li>
 			<a href="contact.html">로그아웃</a>
 			</li>
+			 -->
 			<li>
 			<a href="contact.html">마이페이지</a>
 			</li>
