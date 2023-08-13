@@ -42,6 +42,8 @@ public class TripController {
 		mv.addObject("currentPage",currentPage);
 		mv.setViewName("/WEB-INF/searchContent/areaSearchTotalCount.jsp");
 		return mv;
+		
+		
 	}
 	
 	//지역으로 검색페이지 - 전체페이지수

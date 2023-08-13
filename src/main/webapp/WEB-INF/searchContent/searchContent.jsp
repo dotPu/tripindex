@@ -45,7 +45,7 @@
 <div class="row">
 	<div class="headerlogo four columns">
 		<div class="logo">
-			<a href="index.html">
+			<a href="/index">
 			<h4>여행돌이</h4>
 			</a>
 		</div>
@@ -54,7 +54,7 @@
 		<nav id="nav-wrap">
 		<ul id="main-menu" class="nav-bar sf-menu">
 			<li class="current">
-			<a href="index.html">홈</a>
+			<a href="/index">홈</a>
 			<ul>
 				<li><a href="index2.html">홈페이지 정보</a></li>
 			</ul>

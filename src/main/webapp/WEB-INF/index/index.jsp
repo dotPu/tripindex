@@ -46,7 +46,7 @@
 <div class="row">
 	<div class="headerlogo four columns">
 		<div class="logo">
-			<a href="index.html">
+			<a href="/index">
 			<h4>여행돌이</h4>
 			</a>
 		</div>
@@ -55,7 +55,7 @@
 		<nav id="nav-wrap">
 		<ul id="main-menu" class="nav-bar sf-menu">
 			<li class="current">
-			<a href="index.html">홈</a>
+			<a href="/index">홈</a>
 			<ul>
 				<li><a href="index2.html">홈페이지 정보</a></li>
 			</ul>
@@ -135,7 +135,7 @@
 			</a>
 			</li>
 			<li>
-			<a href="#">
+			<a href="/areaSearchTotalCount?areaCode=2">
 			<span class="ca-icon"><i class="fa fa-bullhorn"></i></span>
 			<div class="ca-content">
 				<h2 class="ca-main">인천<br/> 관광정보</h2>
@@ -144,7 +144,7 @@
 			</a>
 			</li>
 			<li>
-			<a href="#">
+			<a href="/areaSearchTotalCount?areaCode=31">
 			<span class="ca-icon"><i class="fa fa-user"></i></span>
 			<div class="ca-content">
 				<h2 class="ca-main">경기<br/> 관광정보</h2>
@@ -153,7 +153,7 @@
 			</a>
 			</li>
 			<li>
-			<a href="#">
+			<a href="/areaSearchTotalCount?areaCode=32">
 			<span class="ca-icon"><i class="fa fa-camera"></i></span>
 			<div class="ca-content">
 				<h2 class="ca-main">강원<br/> 관광정보</h2>
@@ -168,7 +168,7 @@
 	<div class="twelve columns">
 		<ul class="ca-menu">
 			<li>
-			<a href="#">
+			<a href="/areaSearchTotalCount?areaCode=33">
 			<span class="ca-icon"><i class="fa fa-heart"></i></span>
 			<div class="ca-content">
 				<h2 class="ca-main">충청북도<br/> 관광정보</h2>
@@ -177,7 +177,7 @@
 			</a>
 			</li>
 			<li>
-			<a href="#">
+			<a href="/areaSearchTotalCount?areaCode=34">
 			<span class="ca-icon"><i class="fa fa-bullhorn"></i></span>
 			<div class="ca-content">
 				<h2 class="ca-main">충청남도<br/> 관광정보</h2>
@@ -186,7 +186,7 @@
 			</a>
 			</li>
 			<li>
-			<a href="#">
+			<a href="/areaSearchTotalCount?areaCode=35">
 			<span class="ca-icon"><i class="fa fa-user"></i></span>
 			<div class="ca-content">
 				<h2 class="ca-main">경상북도<br/> 관광정보</h2>
@@ -195,7 +195,7 @@
 			</a>
 			</li>
 			<li>
-			<a href="#">
+			<a href="/areaSearchTotalCount?areaCode=36">
 			<span class="ca-icon"><i class="fa fa-camera"></i></span>
 			<div class="ca-content">
 				<h2 class="ca-main">경상남도<br/> 관광정보</h2>
@@ -210,7 +210,7 @@
 	<div class="twelve columns">
 		<ul class="ca-menu">
 			<li>
-			<a href="#">
+			<a href="/areaSearchTotalCount?areaCode=37">
 			<span class="ca-icon"><i class="fa fa-heart"></i></span>
 			<div class="ca-content">
 				<h2 class="ca-main">전라북도<br/> 관광정보</h2>
@@ -219,7 +219,7 @@
 			</a>
 			</li>
 			<li>
-			<a href="#">
+			<a href="/areaSearchTotalCount?areaCode=38">
 			<span class="ca-icon"><i class="fa fa-bullhorn"></i></span>
 			<div class="ca-content">
 				<h2 class="ca-main">전라남도<br/> 관광정보</h2>
@@ -228,7 +228,7 @@
 			</a>
 			</li>
 			<li>
-			<a href="#">
+			<a href="/areaSearchTotalCount?areaCode=39">
 			<span class="ca-icon"><i class="fa fa-heart"></i></span>
 			<div class="ca-content">
 				<h2 class="ca-main">제주도<br/> 관광정보</h2>
