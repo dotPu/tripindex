@@ -1,5 +1,7 @@
 package controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +15,9 @@ public class TripController {
 	
 	@Autowired
 	TripService service;
+	
+	@Autowired
+	HttpSession session;
 	
 	//메인페이지
 	@RequestMapping("/index")
@@ -95,6 +100,18 @@ public class TripController {
 	public String login() {
 		return "/WEB-INF/account/login.jsp";
 	}//login
+	//로그인 결과
+	@RequestMapping("/loginProc")
+	public ModelAndView loginProc(String id, String password) {
+		ModelAndView mv = new ModelAndView();
+		if(service.login(id, password) != null) {
+			mv.addObject("result", 1);
+			session.setAttribute("id", id);
+		}
+		mv.setViewName("/WEB-INF/account/loginProc.jsp");
+		return mv;
+	}
+	
 	//회원가입 창
 	@RequestMapping("/signup")
 	public String signUp() {

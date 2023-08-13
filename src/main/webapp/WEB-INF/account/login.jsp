@@ -132,7 +132,7 @@
 		</div>
 		<div class="form">
 			<form method="post" action="/loginProc" id="contactform">
-				<input type="text" name="name" class="smoothborder" placeholder="아이디"/>
+				<input type="text" name="id" class="smoothborder" placeholder="아이디"/>
 				<input type="password" name="password" class="smoothborder" placeholder="비밀번호"/>
 				<input type="submit" id="submit" class="readmore" value="로그인">
 				<input type="button" id="signup" class="readmore" value="회원가입" onclick="location.href='signup'">

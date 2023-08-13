@@ -17,5 +17,9 @@ public class TripService {
 		return dao.insert(ac);
 	}
 	
+	public TripAccountVO login(String id, String password) {
+		
+		return dao.login(id, password);
+	}
 	
 }

@@ -82,20 +82,21 @@
 				<li><a href="columns.html">채팅</a></li>
 			</ul>
 			</li>
-			<li>
-			<a href="/login">로그인</a>
-			</li>
-			<li>
-			<a href="/signup">회원가입</a>
-			</li>
-<!-- 			로그인되면 c:if문으로 출력예정
-			<li>
-			<a href="contact.html">로그아웃</a>
-			</li>
-			 -->
-			<li>
-			<a href="contact.html">마이페이지</a>
-			</li>
+			<%if(session.getAttribute("id")==null){%>
+				<li>
+					<a href="/login">로그인</a>
+				</li>
+				<li>
+					<a href="/signup">회원가입</a>
+				</li>
+			<%}else{%>
+				<li>
+					<a href="contact.html">마이페이지</a>
+				</li>
+				<li>
+					<a href="/logout">[로그아웃]</a>
+				</li>
+			<%out.print(session.getAttribute("id")+"님");}%>
 		</ul>
 		</nav>
 	</div>
