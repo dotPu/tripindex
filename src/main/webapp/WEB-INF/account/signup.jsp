@@ -132,11 +132,12 @@
 		</div>
 		<div class="form">
 			<form method="post" action="/signupProc" id="contactform" accept-charset="UTF-8">
-				<input type="text" name="id" class="smoothborder" placeholder="아이디"/>
-				<input type="text" name="password" class="smoothborder" placeholder="비밀번호"/>
-				<input type="text" name="name" class="smoothborder" placeholder="이름"/>
-				<input type="email" name="email" class="smoothborder" placeholder="이메일"/>
-				<input type="text" name="address" class="smoothborder" placeholder="주소"/>
+				<input type="text" id="id" name="id" class="smoothborder" placeholder="아이디"/>
+				<input type="text" id="password" name="password" class="smoothborder" placeholder="비밀번호"/>
+				<input type="text" id="name" name="name" class="smoothborder" placeholder="이름"/>
+				<input type="email" id="email" name="email" class="smoothborder" placeholder="이메일"/>
+				<input type="button" id="checkemail" onclick="checkEmail()" class="readmore" value="이메일 확인"/>
+				<input type="text" id="address" name="address" class="smoothborder" placeholder="주소"/>
 				<select id="options" name="gender" class="smoothborder">
 					<option value="M">남</option>
 					<option value="F">여</option>
@@ -146,7 +147,7 @@
 					<option value="3">일반회원</option>
 				</select><br>
 				<input type="date" name="birthday" class="smoothborder" placeholder="생년월일"/>
-				<input type="submit" id="submit" class="readmore" value="회원가입">
+				<input type="button" id="confirmbtn" class="readmore" onclick="confirm()" value="가입하기">
 				<input type="button" id="signup" class="readmore" value="처음으로" onclick="location.href='index'">
 			</form>
 		</div>
