@@ -8,7 +8,61 @@ $.ajax({
 	dataType: "json",
 	success:function(result){
 		console.log(result);
-		$("#textareainfo").text(result.response.body.items.item)
+		
+		//관광지 : 12
+		if(${contenttypeid}==12){
+			
+		}
+		//문화시설 : 14
+		else if(${contenttypeid}==14){
+			
+		}
+		//축제공연행서 : 15
+		else if(${contenttypeid}==15){
+			
+		}
+		//여행코스 : 25
+		else if(${contenttypeid}==25){
+			
+		}
+		//레포츠 : 28
+		else if(${contenttypeid}==28){
+			
+		}
+		//숙박 : 32
+		else if(${contenttypeid}==32){
+			
+		}
+		//쇼핑 : 38
+		else if(${contenttypeid}==38){
+			$("#contentinfo").append("주소:"+"${addr}"+"<br>"+"이름:"+"${title}"+"<br>");
+			if(result.response.body.items.item[0].saleitem!=""){	
+				$("#contentinfo").append("판매물품:"+result.response.body.items.item[0].saleitem+"<br>");
+			}
+			if(result.response.body.items.item[0].fairday!=""){
+				$("#contentinfo").append("영업시간:"+result.response.body.items.item[0].fairday+"<br>");
+			}
+			if(result.response.body.items.item[0].opentime!=""){
+				$("#contentinfo").append("이용시간:"+result.response.body.items.item[0].opentime+"<br>");
+			}
+			if(result.response.body.items.item[0].restdateshopping!=""){
+				$("#contentinfo").append("휴점일:"+result.response.body.items.item[0].restdateshopping+"<br>");
+			}
+			if(result.response.body.items.item[0].infocentershopping!=""){
+				$("#contentinfo").append("전화번호:"+result.response.body.items.item[0].infocentershopping+"<br>");
+			}
+			if(result.response.body.items.item[0].parkingshopping!=""){
+				$("#contentinfo").append("주차여부:"+result.response.body.items.item[0].parkingshopping+"<br>");
+			}
+		}
+		//음식점 : 39
+		else if(${contenttypeid}==39){
+			
+		}
+		//데이터 에러
+		else{
+			
+		}
 	}
 });
 </script>
@@ -22,7 +76,8 @@ $.ajax({
 	<br>
 	<img src="${firstimage}">		
 	<br><br>		
-	<textarea name="comment" class="smoothborder ctextarea" rows="14" placeholder="상세정보" id="textareainfo"></textarea>
-					
+		<div id="contentinfo" style="border:1px solid red;width:900px;height:500px">
+		
+		</div>			
 	</div>
 </form>	
