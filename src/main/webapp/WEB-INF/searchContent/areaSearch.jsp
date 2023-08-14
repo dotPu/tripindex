@@ -9,10 +9,11 @@ $.ajax({
 	url:'https://apis.data.go.kr/B551011/KorService1/areaBasedList1?numOfRows=9&pageNo='+${currentPage}+'&MobileOS=ETC&MobileApp=AppTest&_type=json&areaCode='+${areaCode}+'&serviceKey=ASFMkt7oBR3EQtEzt2OHaPCqKJcrsqtwQVcbkNzSEB5d4xFv10CRJdwfBQUCRIj54jwEwBm3si2evB%2FlGXj4vQ%3D%3D',
 	dataType: "json",
 	success:function(result){
-		console.log(result);
+		console.log(result);		
 		for(var i=0; i<9; i++){
 			$("#title"+(i+1)).text(result.response.body.items.item[i].title)
 			$("#content"+(i+1)).text(result.response.body.items.item[i].addr1)
+			$("#detailinfo"+(i+1)).attr("href", "/detailContent?contentid="+result.response.body.items.item[i].contentid+"&contenttypeid="+result.response.body.items.item[i].contenttypeid+"&firstimage="+result.response.body.items.item[i].firstimage+"&addr="+result.response.body.items.item[i].addr1+" "+result.response.body.items.item[i].addr2+"&title="+result.response.body.items.item[i].title);
 		}
 	}
 });
@@ -29,7 +30,7 @@ $.ajax({
 					
 					</p>
 					<p>
-						<a href="#" class="small continue">상세정보 보러가기</a>
+						<a href="#" class="small continue" id="detailinfo1">상세정보 보러가기</a>
 					</p>
 				</div>
 			</div>
@@ -40,7 +41,7 @@ $.ajax({
 					
 					</p>
 					<p>
-						<a href="#" class="small continue">상세정보 보러가기</a>
+						<a href="#" class="small continue" id="detailinfo2">상세정보 보러가기</a>
 					</p>
 				</div>
 			</div>
@@ -51,7 +52,7 @@ $.ajax({
 					
 					</p>
 					<p>
-						<a href="#" class="small continue">상세정보 보러가기</a>
+						<a href="#" class="small continue" id="detailinfo3">상세정보 보러가기</a>
 					</p>
 				</div>
 			</div>
@@ -62,7 +63,7 @@ $.ajax({
 					
 					</p>
 					<p>
-						<a href="#" class="small continue">상세정보 보러가기</a>
+						<a href="#" class="small continue" id="detailinfo4">상세정보 보러가기</a>
 					</p>
 				</div>
 			</div>
@@ -73,7 +74,7 @@ $.ajax({
 					
 					</p>
 					<p>
-						<a href="#" class="small continue">상세정보 보러가기</a>
+						<a href="#" class="small continue" id="detailinfo5">상세정보 보러가기</a>
 					</p>
 				</div>
 			</div>
@@ -84,7 +85,7 @@ $.ajax({
 					
 					</p>
 					<p>
-						<a href="#" class="small continue">상세정보 보러가기</a>
+						<a href="#" class="small continue" id="detailinfo6">상세정보 보러가기</a>
 					</p>
 				</div>
 			</div>
@@ -95,7 +96,7 @@ $.ajax({
 					
 					</p>
 					<p>
-						<a href="#" class="small continue">상세정보 보러가기</a>
+						<a href="#" class="small continue" id="detailinfo7">상세정보 보러가기</a>
 					</p>
 				</div>
 			</div>
@@ -106,7 +107,7 @@ $.ajax({
 					
 					</p>
 					<p>
-						<a href="#" class="small continue">상세정보 보러가기</a>
+						<a href="#" class="small continue" id="detailinfo8">상세정보 보러가기</a>
 					</p>
 				</div>
 			</div>
@@ -117,7 +118,7 @@ $.ajax({
 					
 					</p>
 					<p>
-						<a href="#" class="small continue">상세정보 보러가기</a>
+						<a href="#" class="small continue" id="detailinfo9">상세정보 보러가기</a>
 					</p>
 				</div>
 			</div>

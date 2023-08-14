@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import dao.TripAccountVO;
@@ -92,6 +93,19 @@ public class TripController {
 		mv.addObject("currentPage",currentPage);
 		mv.addObject("totalCount",totalCount);
 		mv.setViewName("/WEB-INF/searchContent/searchContent.jsp");
+		return mv;
+	}
+	
+	//검색 - 상세정보
+	@RequestMapping("/detailContent")
+	public ModelAndView detailContent(ModelAndView mv,String contentid,String contenttypeid,String firstimage,String addr,String title){
+		mv.addObject("contentid",contentid);
+		mv.addObject("contenttypeid",contenttypeid);
+		mv.addObject("firstimage",firstimage);
+		mv.addObject("addr",addr);
+		mv.addObject("title",title);
+
+		mv.setViewName("/WEB-INF/content/detailContent.jsp");
 		return mv;
 	}
 	
