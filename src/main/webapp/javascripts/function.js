@@ -10,12 +10,20 @@ function checkEmail(){
 		alert('올바르지 않은 이메일 주소입니다.');
 		email.focus();
 	}else{
+		openmodal();
 		alert('이메일 인증이 완료되었습니다.')
 		pass = true;
 		var cm = document.getElementById('checkemail');
 		cm.style.display = 'none';
 	}
 	
+}
+
+function openmodal() {
+	const modal = document.getElementById('emailcheckmodal');
+	const modalemailcheck = document.getElementById("modalemailcheck");
+		
+		modal.style.display = "block";
 }
 
 function confirm(){

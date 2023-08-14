@@ -137,6 +137,12 @@
 				<input type="text" id="name" name="name" class="smoothborder" placeholder="이름"/>
 				<input type="email" id="email" name="email" class="smoothborder" placeholder="이메일"/>
 				<input type="button" id="checkemail" onclick="checkEmail()" class="readmore" value="이메일 확인"/>
+				<div id = "emailcheckmodal" class="modal">
+					<div class="modal-content">
+						<input type="text" id="modalemailcheck" name="modalemailcheck">
+					</div>
+				</div>
+				
 				<input type="text" id="address" name="address" class="smoothborder" placeholder="주소"/>
 				<select id="options" name="gender" class="smoothborder">
 					<option value="M">남</option>
