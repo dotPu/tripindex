@@ -118,27 +118,18 @@
 <!-- CONTENT 
 ================================================== -->
 <div class="row">
-    <!-- GOOGLE MAP IFRAME -->
-	<div class="twelve columns">
-		<jsp:include page="/WEB-INF/content/contentMap.jsp"/>	
-	</div>
-</div>
-<div class="row">
 	<!-- CONTACT FORM -->
 	<div class="twelve columns">
 		<div class="wrapcontact">
 			<h5>전국 방방곡곡 여행돌이</h5>
 					
 				<form method="post" action="contact.php" id="contactform">
-				<div class="form">
-				    <div class="six columns noleftmargin">
-					<h1>상세정보</h1>
-					<input type="text" name="name" class="smoothborder" placeholder="타이틀"/>
-					</div>
-					<br>
-					
-					<textarea name="comment" class="smoothborder ctextarea" rows="14" placeholder="상세정보"></textarea>
-					
+				<div class="form">	   
+						<div class="row">
+							<div class="twelve columns">
+							<jsp:include page="/WEB-INF/content/detailContent.jsp"/>	
+						</div>
+					</div>	
 				</div>
 				</form>			
 		</div>

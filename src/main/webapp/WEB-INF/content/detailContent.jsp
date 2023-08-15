@@ -235,16 +235,21 @@ $.ajax({
 });
 </script>
 
+	
+
 <form method="post" action="contact.php" id="contactform">
 	<div class="form">
 	    <div class="six columns noleftmargin">
 			<h1>상세정보</h1>
+				<br>
 				<input type="text" name="name" class="smoothborder" value="${title}" style="width:400px"/>
 		</div>
 	<br>
+		<jsp:include page="/WEB-INF/content/contentMap.jsp"/>
+	<br>
 	<img src="${firstimage}">		
 	<br><br>		
-		<div id="contentinfo" style="border:1px solid red;width:900px;height:500px">
+		<div id="contentinfo" style="border-style:solid;width:900px;height:300px;font-weight:bold;font-size:15px">
 		
 		</div>			
 	</div>
