@@ -4,7 +4,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import dao.TripAccountVO;
@@ -23,12 +25,6 @@ public class TripController {
 	@RequestMapping("/index")
 	public String index() {
 		return "/WEB-INF/index/index.jsp";
-	}
-
-	//내용-하나상세보기페이지
-	@RequestMapping("/content")
-	public String content() {
-		return "/WEB-INF/content/content.jsp";
 	}
 	
 	//검색페이지
@@ -96,7 +92,7 @@ public class TripController {
 	}
 	
 	//검색 - 상세정보
-	@RequestMapping("/detailContent")
+	@RequestMapping("/content")
 	public ModelAndView detailContent(ModelAndView mv,String contentid,String contenttypeid,String firstimage,String addr,String title){
 		mv.addObject("contentid",contentid);
 		mv.addObject("contenttypeid",contenttypeid);
@@ -104,7 +100,7 @@ public class TripController {
 		mv.addObject("addr",addr);
 		mv.addObject("title",title);
 
-		mv.setViewName("/WEB-INF/content/detailContent.jsp");
+		mv.setViewName("/WEB-INF/content/content.jsp");
 		return mv;
 	}
 	
@@ -132,9 +128,12 @@ public class TripController {
 	}//signup
 	
 	@RequestMapping("/mailsend")
-	public String mailsend() {
+	@ResponseBody
+	public String mailsend(Model m) {
+		System.out.println("mailsend");
+//		m.addAttribute("test","테스트입니다");
 		
-		return "테스트입니다.";
+		return "test";
 	}
 	
 	//회원가입 처리

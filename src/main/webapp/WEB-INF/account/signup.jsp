@@ -140,7 +140,7 @@
 				<div id = "email-check-modal" class="modal">
 					<div id="email-check-modal-content" class="modal-content">
 						<h3>이메일 인증</h3>
-						<input type="text" id="modaltext" name="modaltext">
+						<input type="text" id="modaltext" name="modaltext" placeholder="코드를 입력해주세요.">
 						<input type="button" id="modal-close-btn" onclick="closemodal()" class="readmore" value="확인">
 					</div>
 				</div>

@@ -11,6 +11,7 @@ function checkEmail(){
 		email.focus();
 	}else{
 		openmodal();
+		
 		alert('이메일 인증이 완료되었습니다.')
 		pass = true;
 		var cm = document.getElementById('checkemail');
@@ -21,9 +22,23 @@ function checkEmail(){
 
 function openmodal() {
 	const modal = document.getElementById('email-check-modal');
-	const modalemailcheck = document.getElementById("email-check-modal-content");
-		
-		modal.style.display = "block";
+	const modalemailcheck = document.getElementById("email-check-modal-content");	
+	modal.style.display = "block";
+	$.ajax({
+        url: "/mailsend", // 컨트롤러 URL 설정
+        method: "GET", // 또는 "POST" 등 HTTP 메서드 설정
+        dataType : "text",
+        success: function(data) {
+            // AJAX 요청이 성공할 때 호출되는 함수
+            console.log(data);
+            $("#modaltext").val(data); // 받아온 데이터를 표시
+        },
+        contentType: "text/plain; charset=utf-8", // 요청 데이터의 타입 및 인코딩 설정
+    	beforeSend: function(xhr) {
+        xhr.overrideMimeType("text/plain; charset=utf-8"); // 응답 데이터의 인코딩 설정
+    	}
+    })
+	
 }
 function closemodal(){
 	const modal = document.getElementById('email-check-modal');
