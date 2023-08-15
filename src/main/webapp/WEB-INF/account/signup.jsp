@@ -137,9 +137,11 @@
 				<input type="text" id="name" name="name" class="smoothborder" placeholder="이름"/>
 				<input type="email" id="email" name="email" class="smoothborder" placeholder="이메일"/>
 				<input type="button" id="checkemail" onclick="checkEmail()" class="readmore" value="이메일 확인"/>
-				<div id = "emailcheckmodal" class="modal">
-					<div class="modal-content">
-						<input type="text" id="modalemailcheck" name="modalemailcheck">
+				<div id = "email-check-modal" class="modal">
+					<div id="email-check-modal-content" class="modal-content">
+						<h3>이메일 인증</h3>
+						<input type="text" id="modaltext" name="modaltext">
+						<input type="button" id="modal-close-btn" onclick="closemodal()" class="readmore" value="확인">
 					</div>
 				</div>
 				

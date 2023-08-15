@@ -20,12 +20,17 @@ function checkEmail(){
 }
 
 function openmodal() {
-	const modal = document.getElementById('emailcheckmodal');
-	const modalemailcheck = document.getElementById("modalemailcheck");
+	const modal = document.getElementById('email-check-modal');
+	const modalemailcheck = document.getElementById("email-check-modal-content");
 		
 		modal.style.display = "block";
 }
-
+function closemodal(){
+	const modal = document.getElementById('email-check-modal');
+	const modalemailcheck = document.getElementById("email-check-modal-content");
+		
+		modal.style.display = "none";
+}
 function confirm(){
 	
 	if(document.querySelector("#id").value==""){

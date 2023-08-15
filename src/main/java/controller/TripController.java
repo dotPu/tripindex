@@ -130,6 +130,13 @@ public class TripController {
 	public String signUp() {
 		return "/WEB-INF/account/signup.jsp";
 	}//signup
+	
+	@RequestMapping("/mailsend")
+	public String mailsend() {
+		
+		return "테스트입니다.";
+	}
+	
 	//회원가입 처리
 	@RequestMapping("/signupProc")
 	public ModelAndView signupProc(TripAccountVO ac) {
