@@ -12,26 +12,27 @@ function checkEmail(){
 	}else{
 		openmodal();
 		
-		alert('이메일 인증이 완료되었습니다.')
-		pass = true;
-		var cm = document.getElementById('checkemail');
-		cm.style.display = 'none';
+		alert('인증 이메일이 전송되었습니다.')
+
 	}
 	
 }
-
+var check = "0";
 function openmodal() {
 	const modal = document.getElementById('email-check-modal');
 	const modalemailcheck = document.getElementById("email-check-modal-content");	
+	var emailValue = $("#email").val();//jQuery방식 var는 변수 const는 상수
 	modal.style.display = "block";
 	$.ajax({
         url: "/mailsend", // 컨트롤러 URL 설정
         method: "GET", // 또는 "POST" 등 HTTP 메서드 설정
+        data : { email : emailValue },
         dataType : "text",
         success: function(data) {
             // AJAX 요청이 성공할 때 호출되는 함수
             console.log(data);
-            $("#modaltext").val(data); // 받아온 데이터를 표시
+            check = data;
+            console.log(check);
         },
         contentType: "text/plain; charset=utf-8", // 요청 데이터의 타입 및 인코딩 설정
     	beforeSend: function(xhr) {
@@ -42,9 +43,18 @@ function openmodal() {
 }
 function closemodal(){
 	const modal = document.getElementById('email-check-modal');
-	const modalemailcheck = document.getElementById("email-check-modal-content");
+	const modaltext = document.getElementById("modaltext");
+	if(modaltext.value==check){
+		alert("이메일 인증이 완료되었습니다");
+		pass = true;
+		var cm = document.getElementById('checkemail');
+		cm.style.display = 'none';
+	}else{
+		alert("인증이 제대로 완료되지 않았습니다.");
 		
-		modal.style.display = "none";
+	}
+	
+	modal.style.display = "none";
 }
 function confirm(){
 	

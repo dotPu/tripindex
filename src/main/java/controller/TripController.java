@@ -129,11 +129,12 @@ public class TripController {
 	
 	@RequestMapping("/mailsend")
 	@ResponseBody
-	public String mailsend(Model m) {
+	public String mailsend(Model m, String email) {
 		System.out.println("mailsend");
 //		m.addAttribute("test","테스트입니다");
+		m.addAttribute("check",service.mailSend(email));
 		
-		return "test";
+		return Integer.toString(service.mailSend(email));
 	}
 	
 	//회원가입 처리

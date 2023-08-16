@@ -26,8 +26,8 @@ public class TripService {
 		return dao.login(id, password);
 	}
 	
-	public void mailSend(String from, String to, String title, String content) {
-		mail.SendEmail(from, to, title, content);
+	public int mailSend(String to) {
+		return mail.SendEmail(to);
 	}
 	
 }
