@@ -6,7 +6,7 @@
 <script>
 $.ajax({
 	type:'get',
-	url:'https://apis.data.go.kr/B551011/KorService1/areaBasedList1?numOfRows=9&pageNo='+${currentPage}+'&MobileOS=ETC&MobileApp=AppTest&_type=json&areaCode='+${areaCode}+'&serviceKey=ASFMkt7oBR3EQtEzt2OHaPCqKJcrsqtwQVcbkNzSEB5d4xFv10CRJdwfBQUCRIj54jwEwBm3si2evB%2FlGXj4vQ%3D%3D',
+	url:'https://apis.data.go.kr/B551011/KorService1/areaBasedList1?numOfRows=9&pageNo='+${currentPage}+'&MobileOS=ETC&MobileApp=AppTest&_type=json&contentTypeId='+${contentTypeId}+'&serviceKey=ASFMkt7oBR3EQtEzt2OHaPCqKJcrsqtwQVcbkNzSEB5d4xFv10CRJdwfBQUCRIj54jwEwBm3si2evB%2FlGXj4vQ%3D%3D',
 	dataType: "json",
 	success:function(result){
 		console.log(result);		
@@ -124,11 +124,11 @@ $.ajax({
 				</div>
 			</div>
 			<ul class="pagination">
-				<li class="arrow unavailable"><a href='areaSearchTotalCount?areaCode=${areaCode}&currentPage=${prev-9}'>&laquo;</a></li>
+				<li class="arrow unavailable"><a href='kindSearchTotalCount?contentTypeId=${contentTypeId}&currentPage=${prev-9}'>&laquo;</a></li>
 				<c:forEach var="pno" begin="${startPage}" end="${lastPage}" step="1">
-				<li><a href='areaSearchTotalCount?areaCode=${areaCode}&currentPage=${pno}'>${pno}</a></li>
+				<li><a href='kindSearchTotalCount?contentTypeId=${contentTypeId}&currentPage=${pno}'>${pno}</a></li>
 				</c:forEach>
-				<li class="arrow"><a href='areaSearchTotalCount?areaCode=${areaCode}&currentPage=${next}'>&raquo;</a></li>
+				<li class="arrow"><a href='kindSearchTotalCount?contentTypeId=${contentTypeId}&currentPage=${next}'>&raquo;</a></li>
 			</ul>
 		</div>
 		<!-- SIDEBAR -->
