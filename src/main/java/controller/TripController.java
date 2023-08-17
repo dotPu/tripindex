@@ -68,7 +68,6 @@ public class TripController {
 		if(currentPage==null) {
 			currentPage = 1;
 		}
-		
 		mv.addObject("keyword" , titleToSearch);
 		mv.addObject("currentPage", currentPage);//검색하면 반드시 1페이지기때문에.
 		mv.setViewName("/WEB-INF/searchContent/keywordSearchTotalCount.jsp");
@@ -205,7 +204,7 @@ public class TripController {
 			mv.addObject("keyword",keyword);
 			mv.addObject("currentPage",currentPage);
 			mv.addObject("totalCount",totalCount);
-			mv.setViewName("/WEB-INF/searchContent/kindsearchContent.jsp");
+			mv.setViewName("/WEB-INF/searchContent/keywordSearchContent.jsp");
 			return mv;
 		}
 		

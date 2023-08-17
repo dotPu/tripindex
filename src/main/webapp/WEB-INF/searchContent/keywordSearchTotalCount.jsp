@@ -4,15 +4,15 @@
 
 <script>
 var totalCount;
-
+var keyword = '${keyword}';
 $.ajax({
 	type:'get',
-	url:'https://apis.data.go.kr/B551011/KorService1/searchKeyword1?MobileOS=etc&MobileApp=app&_type=json&keyword='${keyword}'&serviceKey=ASFMkt7oBR3EQtEzt2OHaPCqKJcrsqtwQVcbkNzSEB5d4xFv10CRJdwfBQUCRIj54jwEwBm3si2evB%2FlGXj4vQ%3D%3D',
+	url:'https://apis.data.go.kr/B551011/KorService1/searchKeyword1?MobileOS=etc&MobileApp=app&_type=json&keyword='+keyword+'&serviceKey=ASFMkt7oBR3EQtEzt2OHaPCqKJcrsqtwQVcbkNzSEB5d4xFv10CRJdwfBQUCRIj54jwEwBm3si2evB%2FlGXj4vQ%3D%3D',
 	dataType: "json",
 	success:function(result){
 		console.log(result)
 		totalCount = Math.ceil(result.response.body.totalCount/9)
-		location.href="/keywordSearch?keyword="+${keyword}+"&currentPage="+${currentPage}+"&totalCount="+totalCount;
+		location.href="/keywordSearch?keyword="+keyword+"&currentPage="+${currentPage}+"&totalCount="+totalCount;
 	}
 });
 </script>

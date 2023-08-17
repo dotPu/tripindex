@@ -105,6 +105,7 @@ function confirm(){
 /*제목 검색 구현*/
 function titleSearch(){
 	const search = document.getElementById("search");
-	location.href="/titlesearchTotalCount?titleToSearch="+search.value;
+	alert(search.value);
+	location.href="/titleSearchTotalCount?titleToSearch="+search.value;
 	
 }

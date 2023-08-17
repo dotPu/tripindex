@@ -4,9 +4,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
 <script>
+var keyword = '${keyword}';
 $.ajax({
 	type:'get',
-	url:'https://apis.data.go.kr/B551011/KorService1/areaBasedList1?numOfRows=9&pageNo='+${currentPage}+'&MobileOS=ETC&MobileApp=AppTest&_type=json&keyword='+${keyword}+'&serviceKey=ASFMkt7oBR3EQtEzt2OHaPCqKJcrsqtwQVcbkNzSEB5d4xFv10CRJdwfBQUCRIj54jwEwBm3si2evB%2FlGXj4vQ%3D%3D',
+	url:'https://apis.data.go.kr/B551011/KorService1/areaBasedList1?numOfRows=9&pageNo='+${currentPage}+'&MobileOS=ETC&MobileApp=AppTest&_type=json&keyword='+keyword+'&serviceKey=ASFMkt7oBR3EQtEzt2OHaPCqKJcrsqtwQVcbkNzSEB5d4xFv10CRJdwfBQUCRIj54jwEwBm3si2evB%2FlGXj4vQ%3D%3D',
 	dataType: "json",
 	success:function(result){
 		console.log(result);		
@@ -123,13 +124,13 @@ $.ajax({
 					</p>
 				</div>
 			</div>
-			<ul class="pagination">
-				<li class="arrow unavailable"><a href='kindSearchTotalCount?contentTypeId=${contentTypeId}&currentPage=${prev-9}'>&laquo;</a></li>
+<%-- 			<ul class="pagination">
+				<li class="arrow unavailable"><a href='keywordSearchTotalCount?keyword=&currentPage=${prev-9}'>&laquo;</a></li>
 				<c:forEach var="pno" begin="${startPage}" end="${lastPage}" step="1">
-				<li><a href='kindSearchTotalCount?contentTypeId=${contentTypeId}&currentPage=${pno}'>${pno}</a></li>
+				<li><a href='keywordSearchTotalCount?keyword=${keyword}&currentPage=${pno}'>${pno}</a></li>
 				</c:forEach>
-				<li class="arrow"><a href='kindSearchTotalCount?contentTypeId=${contentTypeId}&currentPage=${next}'>&raquo;</a></li>
-			</ul>
+				<li class="arrow"><a href='keywordSearchTotalCount?contentTypeId=${keyword}&currentPage=${next}'>&raquo;</a></li>
+			</ul> --%>
 		</div>
 		<!-- SIDEBAR -->
 		<div class="four columns">
