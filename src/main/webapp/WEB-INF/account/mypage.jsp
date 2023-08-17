@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -23,6 +24,18 @@
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+<script>
+
+function check(){
+	if (!confirm("정말로 삭제하시겠습니까?")) {
+    	location.href="/mypage?id=${result.id}";
+	}
+	else {
+		location.href="/deleteaccount?id=${result.id}";
+	}
+}
+</script>  
+
 </head>
 <body>
 <!-- HIDDEN PANEL 
@@ -124,18 +137,51 @@
     <!-- SIDEBAR-->
 	<div class="four columns">
 	    <!-- Free Quote Form-->
-		<h5>로그인</h5>
+		<h5>마이페이지</h5>
 		<div class="done">
 				<div class="alert-box success">
 				 Message has been sent! <a href="" class="close">x</a>
 				</div>
 		</div>
 		<div class="form">
-			<form method="post" action="/loginProc" id="contactform">
-				<input type="text" name="id" class="smoothborder" placeholder="아이디"/>
-				<input type="password" name="password" class="smoothborder" placeholder="비밀번호"/>
-				<input type="submit" id="submit" class="readmore" value="로그인">
-				<input type="button" id="signup" class="readmore" value="회원가입" onclick="location.href='signup'">
+			<form method="post" action="/updateaccount" id="contactform">
+				아이디<input type="text" name="id" class="smoothborder" placeholder="아이디" value="${result.id}"/>
+				비밀번호<input type="password" name="password" class="smoothborder" placeholder="비밀번호" value="${result.password}"/>
+				이름<input type="text" name="name" class="smoothborder" placeholder="이름" value="${result.name}"/>
+				이메일<input type="text" name="email" class="smoothborder" placeholder="이메일" value="${result.email}"/>
+				주소<input type="text" name="address" class="smoothborder" placeholder="주소" value="${result.address}"/>
+				<c:choose>
+				<c:when test="${'${result.gender}' eq 'M'}">
+				성별<select id="options" name="gender" class="smoothborder">
+					<option value="M" selected="selected">남</option>
+					<option value="F">여</option>
+				</select><br>
+				</c:when>
+				<c:when test="${'${result.gender}' eq 'F'}">
+				성별<select id="options" name="gender" class="smoothborder">
+					<option value="M">남</option>
+					<option value="F" selected="selected">여</option>
+				</select><br>
+				</c:when>
+				</c:choose>
+				<c:choose>
+				<c:when test="${'${result.accountType}' eq '2'}">
+				회원구분<select id="options" name="accountType" class="smoothborder">
+					<option value="2" selected="selected">사업자</option>
+					<option value="3">일반회원</option>
+				</select>
+				</c:when>
+				<c:when test="${'${result.accountType}' eq '3'}">
+				회원구분<select id="options" name="accountType" class="smoothborder">
+					<option value="2">사업자</option>
+					<option value="3" selected="selected">일반회원</option>
+				</select>
+				</c:when>
+				</c:choose>
+				생년월일<input type="date" name="birthday" class="smoothborder" placeholder="생년월일" value="${result.birthday}"/>
+				<input type="submit" id="submit" class="readmore" value="회원정보수정">
+				<input type="button" id="signup" class="readmore" value="회원정보삭제" onclick="check()">
+
 			</form>
 		</div>
 		<br/>

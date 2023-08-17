@@ -25,7 +25,7 @@ public class MailSender {
 		int sendNum = randNum();
 		try {
 			
-			System.out.println(sendNum);
+			System.out.println("인증코드:"+sendNum);
 			msg.setSubject("이메일 인증을 진행해주세요.");
 			Multipart multipart = new MimeMultipart();
 			MimeBodyPart htmlPart = new MimeBodyPart();

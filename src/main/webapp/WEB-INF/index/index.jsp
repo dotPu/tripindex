@@ -91,7 +91,7 @@
 				</li>
 			<%}else{%>
 				<li>
-					<a href="contact.html">마이페이지</a>
+					<a href="/mypage">마이페이지</a>
 				</li>
 				<li>
 					<a href="/logout">[로그아웃]</a>

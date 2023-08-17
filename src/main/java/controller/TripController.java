@@ -168,6 +168,7 @@ public class TripController {
 		return "/WEB-INF/account/login.jsp";
 	}//login
 	//로그인 결과
+	
 	@RequestMapping("/loginProc")
 	public ModelAndView loginProc(String id, String password) {
 		ModelAndView mv = new ModelAndView();
@@ -204,4 +205,38 @@ public class TripController {
 		mv.setViewName("/WEB-INF/account/signupProc.jsp");
 		return mv;
 	}//signupProc
+	
+	//마이페이지
+		@RequestMapping("/mypage")
+		public ModelAndView mypage(ModelAndView mv,HttpSession session) {
+			String id = (String) session.getAttribute("id");
+			TripAccountVO ac = service.findOneById(id);
+			System.out.println(ac.getBirthday());
+			String birthday = ac.getBirthday();
+			String[] birth = birthday.split(" ");
+			ac.setBirthday(birth[0]);
+			mv.addObject("result", ac);
+			
+			mv.setViewName("/WEB-INF/account/mypage.jsp");
+			return mv;
+		}//signupProc
+		
+		//회원정보 수정
+		@RequestMapping("/updateaccount")
+		public ModelAndView updateaccount(TripAccountVO ac) {
+			ModelAndView mv = new ModelAndView();
+			service.update(ac);
+			mv.setViewName("/WEB-INF/account/mypage.jsp");
+			return mv;
+		}//signupProc
+		
+		//회원정보 삭제
+		@RequestMapping("/deleteaccount")
+		public ModelAndView deleteaccount(String id) {
+			ModelAndView mv = new ModelAndView();
+			service.delete(id);
+			mv.setViewName("/WEB-INF/index/index.jsp");
+			return mv;
+		}//signupProc
+	
 }

@@ -1,5 +1,7 @@
 package service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +30,18 @@ public class TripService {
 	
 	public int mailSend(String to) {
 		return mail.SendEmail(to);
+	}
+	
+	public TripAccountVO findOneById(String id) {
+		return dao.findOneById(id);
+	}
+	
+	public int update(TripAccountVO ac) {
+		return dao.update(ac);
+	}
+	
+	public int delete(String id) {
+		return dao.delete(id);
 	}
 	
 }
