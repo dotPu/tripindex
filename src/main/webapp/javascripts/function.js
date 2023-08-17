@@ -100,3 +100,11 @@ function confirm(){
 	document.forms[0].requestSubmit(); //form내에 submit버튼이 없을 경우 실행하는 함수
 	//document.forms[0].submit(); //form내에 submit이 있는 경우에 실행하는 함수
 }
+
+
+/*제목 검색 구현*/
+function titleSearch(){
+	const search = document.getElementById("search");
+	location.href="/titlesearchTotalCount?titleToSearch="+search.value;
+	
+}

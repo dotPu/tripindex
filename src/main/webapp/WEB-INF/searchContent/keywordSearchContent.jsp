@@ -111,10 +111,10 @@
 		<div class="four columns">
 			<div class="row collapse">
 				<div class="ten mobile-three columns">
-					<input type="text" class="nomargin" placeholder="검색어를 입력해주세요">
+					<input type="text" class="nomargin" placeholder="Search...">
 				</div>
 				<div class="two mobile-one columns">
-					<a href="#" onclick="titleSearch()" id="search" class="postfix button expand">검색</a>
+					<a href="#" class="postfix button expand">검색</a>
 				</div>
 			</div>
 		</div>
@@ -125,7 +125,7 @@
 <!-- CONTENT 
 ================================================== -->
 
-<jsp:include page="/WEB-INF/searchContent/areaSearch.jsp"/>
+<jsp:include page="/WEB-INF/searchContent/keywordSearch.jsp"/>
 
 <!-- FOOOTER 
 ================================================== -->

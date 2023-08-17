@@ -61,6 +61,21 @@ public class TripController {
 			
 	}
 	
+	//이름으로 검색페이지(검색바) - 전체페이지수
+	@RequestMapping("/titleSearchTotalCount")
+	public ModelAndView titleSearch(ModelAndView mv,
+		String titleToSearch, Integer currentPage) {
+		if(currentPage==null) {
+			currentPage = 1;
+		}
+		
+		mv.addObject("keyword" , titleToSearch);
+		mv.addObject("currentPage", currentPage);//검색하면 반드시 1페이지기때문에.
+		mv.setViewName("/WEB-INF/searchContent/keywordSearchTotalCount.jsp");
+		
+		return mv;
+	}
+	
 	//지역으로 검색페이지 - 전체페이지수
 	@RequestMapping("/areaSearch")
 	public ModelAndView areaSearch(ModelAndView mv, int areaCode, int currentPage,int totalCount) {
@@ -105,7 +120,7 @@ public class TripController {
 		return mv;
 	}
 	
-	//장르으로 검색페이지 - 전체페이지수
+	//장르로 검색페이지 - 전체페이지수
 		@RequestMapping("/kindSearch")
 		public ModelAndView kindSearch(ModelAndView mv, int contentTypeId, int currentPage,int totalCount) {
 			
@@ -148,7 +163,52 @@ public class TripController {
 			mv.setViewName("/WEB-INF/searchContent/kindsearchContent.jsp");
 			return mv;
 		}
-	
+		
+		
+	//keyword로 검색페이지(검색창) - 전체페이지수
+		@RequestMapping("/keywordSearch")
+		public ModelAndView titleSearch(ModelAndView mv, String keyword, int currentPage,int totalCount) {
+			
+			int pageGroup;
+			if(currentPage <= 10) {
+				pageGroup = 1;
+			}
+			else if((currentPage%10)==0 && currentPage > 10) {
+				pageGroup = (int) Math.ceil(currentPage/10);
+			}	
+			else {
+				pageGroup = (int) Math.ceil(currentPage/10) + 1;
+			}
+			
+			int pageCount = 10;
+			int lastPage = pageGroup * pageCount;
+			
+			if(lastPage > totalCount) {
+				lastPage = totalCount;
+			}
+			
+			int startPage = lastPage - (pageCount - 1);
+			int next = lastPage + 1;
+			int prev;
+			if((startPage-1) > 1) {
+				prev = startPage-1;
+			}
+			else {
+				prev = 1;
+			}
+			
+			mv.addObject("startPage",startPage);
+			mv.addObject("lastPage",lastPage);
+			mv.addObject("next",next);
+			mv.addObject("prev",prev);		
+			
+			mv.addObject("keyword",keyword);
+			mv.addObject("currentPage",currentPage);
+			mv.addObject("totalCount",totalCount);
+			mv.setViewName("/WEB-INF/searchContent/kindsearchContent.jsp");
+			return mv;
+		}
+		
 	//검색 - 상세정보
 	@RequestMapping("/content")
 	public ModelAndView detailContent(ModelAndView mv,String contentid,String contenttypeid,String firstimage,String addr,String title){
@@ -161,6 +221,8 @@ public class TripController {
 		mv.setViewName("/WEB-INF/content/content.jsp");
 		return mv;
 	}
+	
+
 	
 	//로그인 창
 	@RequestMapping("/login")
