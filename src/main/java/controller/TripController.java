@@ -65,13 +65,13 @@ public class TripController {
 	}
 	
 	//이름으로 검색페이지(검색바) - 전체페이지수
-	@RequestMapping("/titleSearchTotalCount")
-	public ModelAndView titleSearch(ModelAndView mv,
-		String titleToSearch, Integer currentPage) {
+	@RequestMapping("/keywordSearchTotalCount")
+	public ModelAndView keywordSearch(ModelAndView mv,
+		String keywordSearch, Integer currentPage) {
 		if(currentPage==null) {
 			currentPage = 1;
 		}
-		mv.addObject("keyword" , titleToSearch);
+		mv.addObject("keyword" , keywordSearch);
 		mv.addObject("currentPage", currentPage);//검색하면 반드시 1페이지기때문에.
 		mv.setViewName("/WEB-INF/searchContent/keywordSearchTotalCount.jsp");
 		

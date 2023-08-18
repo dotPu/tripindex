@@ -103,9 +103,9 @@ function accountconfirm(){
 
 
 /*제목 검색 구현*/
-function titleSearch(){
+function keywordSearch(){
 	const search = document.getElementById("search");
 	alert(search.value);
-	location.href="/titleSearchTotalCount?titleToSearch="+search.value;
+	location.href="/keywordSearchTotalCount?keywordSearch="+search.value;
 	
 }

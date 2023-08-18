@@ -111,10 +111,10 @@
 		<div class="four columns">
 			<div class="row collapse">
 				<div class="ten mobile-three columns">
-					<input type="text" class="nomargin" placeholder="Search...">
+					<input type="text" id="search" class="nomargin" placeholder="검색어를 입력해주세요">
 				</div>
 				<div class="two mobile-one columns">
-					<a href="#" class="postfix button expand">검색</a>
+					<a onclick="keywordSearch()" class="postfix button expand">검색</a>
 				</div>
 			</div>
 		</div>
@@ -184,5 +184,6 @@
 <script src="javascripts/hoverIntent.js"></script>
 <script src="javascripts/superfish.js"></script>
 <script src="javascripts/responsivemenu.js"></script>
+<script src="javascripts/function.js"></script>
 </body>
 </html>

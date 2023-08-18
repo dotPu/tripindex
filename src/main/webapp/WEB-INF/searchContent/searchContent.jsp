@@ -114,7 +114,7 @@
 					<input type="text" id="search" class="nomargin" placeholder="검색어를 입력해주세요">
 				</div>
 				<div class="two mobile-one columns">
-					<a onclick="titleSearch()" class="postfix button expand">검색</a>
+					<a onclick="keywordSearch()" class="postfix button expand">검색</a>
 				</div>
 			</div>
 		</div>
