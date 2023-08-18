@@ -36,8 +36,8 @@ public class TripService {
 		return dao.findOneById(id);
 	}
 	
-	public int update(TripAccountVO ac) {
-		return dao.update(ac);
+	public int update(TripAccountVO vo) {
+		return dao.update(vo);
 	}
 	
 	public int delete(String id) {

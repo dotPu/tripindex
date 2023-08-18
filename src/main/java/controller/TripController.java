@@ -2,9 +2,12 @@ package controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -280,16 +283,16 @@ public class TripController {
 			
 			mv.setViewName("/WEB-INF/account/mypage.jsp");
 			return mv;
-		}//signupProc
+		}
 		
 		//회원정보 수정
 		@RequestMapping("/updateaccount")
-		public ModelAndView updateaccount(TripAccountVO ac) {
+		public ModelAndView updateaccount(TripAccountVO vo) {
 			ModelAndView mv = new ModelAndView();
-			service.update(ac);
-			mv.setViewName("/WEB-INF/account/mypage.jsp");
+			service.update(vo);
+			mv = mypage(mv, session);
 			return mv;
-		}//signupProc
+		}
 		
 		//회원정보 삭제
 		@RequestMapping("/deleteaccount")
@@ -298,6 +301,6 @@ public class TripController {
 			service.delete(id);
 			mv.setViewName("/WEB-INF/index/index.jsp");
 			return mv;
-		}//signupProc
+		}
 	
 }
