@@ -155,7 +155,7 @@
 					<option value="3">일반회원</option>
 				</select><br>
 				<input type="date" name="birthday" class="smoothborder" placeholder="생년월일"/>
-				<input type="button" id="confirmbtn" class="readmore" onclick="confirm()" value="가입하기">
+				<input type="button" id="confirmbtn" class="readmore" onclick="accountconfirm()" value="가입하기">
 				<input type="button" id="signup" class="readmore" value="처음으로" onclick="location.href='index'">
 			</form>
 		</div>

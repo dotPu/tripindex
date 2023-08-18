@@ -14,6 +14,9 @@ $.ajax({
 	success:function(result){
 		console.log(result);		
 		for(var i=0; i<9; i++){
+			if(result.response.body.items.item[i].title==""){
+				break;
+			}
 			$("#title"+(i+1)).text(result.response.body.items.item[i].title)
 			$("#content"+(i+1)).text(result.response.body.items.item[i].addr1)
 			$("#detailinfo"+(i+1)).attr("href", "/content?contentid="+result.response.body.items.item[i].contentid+"&contenttypeid="+result.response.body.items.item[i].contenttypeid+"&firstimage="+result.response.body.items.item[i].firstimage+"&addr="+result.response.body.items.item[i].addr1+" "+result.response.body.items.item[i].addr2+"&title="+result.response.body.items.item[i].title);

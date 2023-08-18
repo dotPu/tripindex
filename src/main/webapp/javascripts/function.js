@@ -56,7 +56,7 @@ function closemodal(){
 	
 	modal.style.display = "none";
 }
-function confirm(){
+function accountconfirm(){
 	
 	if(document.querySelector("#id").value==""){
 	alert('아이디가 비어 있습니다.')

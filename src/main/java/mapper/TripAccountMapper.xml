@@ -23,7 +23,7 @@
 		select * from tripaccount where id = #{id} and password = #{password}
 	</select>
 	<update id="update">
-		update tripaccount set password = #{ac.password}, name = #{ac.name}, email = #{ac.email} where id = #{ac.id}
+		update tripaccount set password = #{vo.password}, name = #{vo.name}, email = #{vo.email} where id = #{vo.id}
 	</update>
 	<delete id="delete">
 		delete from tripaccount where id = #{id}
