@@ -45,7 +45,7 @@
 <div class="row">
 	<div class="headerlogo four columns">
 		<div class="logo">
-			<a href="index.html">
+			<a href="index">
 			<h4>여행돌이</h4>
 			</a>
 		</div>
@@ -136,6 +136,16 @@
 				<input type="password" name="password" class="smoothborder" placeholder="비밀번호"/>
 				<input type="submit" id="submit" class="readmore" value="로그인">
 				<input type="button" id="signup" class="readmore" value="회원가입" onclick="location.href='signup'">
+				<br><a onclick="forgetpwOpen()">비밀번호를 잊으셨나요?</a>
+				<div id = "pw-modal" class="modal">
+					<div id="pw-modal-content" class="modal-content">
+						<input type="button" id="idforgetbtn" name="idforgetbtn" class="readmore" value="아이디찾기"
+						onclick="findId()">
+						<input type="button" id="pwforgetbtn" name="pwforgetbtn" class="readmore" value="비밀번호찾기"
+						onclick="findPw()"><br>
+						<input type="button" id="pwmodalclosebtn" name="pwmodalclosebtn" class="readmore" value="닫기">						
+					</div>
+				</div>
 			</form>
 		</div>
 		<br/>

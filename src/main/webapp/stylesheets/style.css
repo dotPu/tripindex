@@ -1701,6 +1701,27 @@ Supports Thumbs: true
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
   }
+  
+  /*비밀번호 찾기 모달*/
+  #pw-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  #pw-modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
 
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome

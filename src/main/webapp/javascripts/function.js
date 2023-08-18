@@ -101,6 +101,18 @@ function confirm(){
 	//document.forms[0].submit(); //form내에 submit이 있는 경우에 실행하는 함수
 }
 
+//비밀번호 찾기
+function forgetpwOpen(){
+	const modal = document.getElementById('pw-modal');
+	modal.style.display = "block";
+	
+}
+
+function forgetpwClose(){
+	const modal = document.getElementById('pw-modal');
+	modal.style.display = "none";
+	
+}
 
 /*제목 검색 구현*/
 function keywordSearch(){
