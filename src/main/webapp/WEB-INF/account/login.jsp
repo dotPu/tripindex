@@ -139,13 +139,41 @@
 				<br><a onclick="forgetpwOpen()">비밀번호를 잊으셨나요?</a>
 				<div id = "pw-modal" class="modal">
 					<div id="pw-modal-content" class="modal-content">
+						<h3>원하시는 서비스를 선택해주세요.</h3>
 						<input type="button" id="idforgetbtn" name="idforgetbtn" class="readmore" value="아이디찾기"
 						onclick="findId()">
 						<input type="button" id="pwforgetbtn" name="pwforgetbtn" class="readmore" value="비밀번호찾기"
-						onclick="findPw()"><br>
-						<input type="button" id="pwmodalclosebtn" name="pwmodalclosebtn" class="readmore" value="닫기">						
+						onclick="findPw()"><br><br>
+						<input type="button" onclick="forgetpwClose()" id="pwmodalclosebtn" name="pwmodalclosebtn" class="readmore" value="닫기">						
 					</div>
 				</div>
+				<!-- 아이디찾기 : 이메일 입력 폼 -->
+				<div id = "findid-modal" class="modal">
+					<div id="findid-modal-content" class="modal-content">
+						<h2>가입한 계정의 이메일을 입력해주세요</h2>
+						<input type="email" id="findid-input" name="findid-input" class="smoothborder">
+						<input type="button" id="findid-btn" name="findid-btn" class="readmore" value="확인"
+						onclick="mailsend(document.getElementById('findid-input').value)">
+						<br><br>
+						<div id = "findid-hide">
+							<input type="text" id="findid-check" name="findid-check" class="smoothborder">
+							<input type="button" id="findid-confirm" name="findid-confirm" class="readmore" value="확인">
+							<br><br>
+						</div>
+						<input type="button" onclick="forgetpwClose()" id="pwmodalclosebtn" name="pwmodalclosebtn" class="readmore" value="닫기">						
+					</div>
+				</div><!-- 이메일 입력 폼 끝 -->
+				<!-- 비밀번호찾기 : 비밀번호 입력 폼 -->
+				<div id = "findid-modal" class="modal">
+					<div id="findid-modal-content" class="modal-content">
+						<h2>가입한 계정의 이메일을 입력해주세요</h2>
+						<input type="email" id="findid-input" name="findid-input" class="smoothborder">
+						<input type="button" id="findid-btn" name="findid-btn" class="readmore" value="확인"
+						onclick="mailsend(document.getElementById('findid-input').value)">
+						<br><br>
+						<input type="button" onclick="forgetpwClose()" id="pwmodalclosebtn" name="pwmodalclosebtn" class="readmore" value="닫기">						
+					</div>
+				</div><!-- 이메일 입력 폼 끝 -->
 			</form>
 		</div>
 		<br/>
