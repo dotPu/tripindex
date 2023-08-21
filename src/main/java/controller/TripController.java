@@ -227,29 +227,48 @@ public class TripController {
 	
 	//달력 - 달력보기
 	@RequestMapping("/calendar")
-	public ModelAndView calendar(ModelAndView mv) {
-		mv.setViewName("/WEB-INF/calendar/calendar.jsp");
+	public ModelAndView calendar(ModelAndView mv,String time) {
+		if(time!=null) {
+		String id = (String) session.getAttribute("id");
+		System.out.println(id +","+time);
+		TripCalendarVO vo = service.calendarFindOneById(id, time);
+		if (vo != null) {
+            mv.addObject("content", vo.getContent());
+            
+        } else {
+            mv.addObject("content", null);
+        }
+		}
+		
+		mv.setViewName("/WEB-INF/calendar/calendarpage.jsp");
 		return mv;
 	}
 	
 	//달력 - 일정추가
 	@RequestMapping("/calendarInsert")
-	public ModelAndView calendarInsert(ModelAndView mv,TripCalendarVO vo) {
-		mv.setViewName("/WEB-INF/calendar/calendar.jsp");
+	public ModelAndView calendarInsert(ModelAndView mv,String content,String time) {
+		String id = (String) session.getAttribute("id");
+		System.out.println(id+","+content+","+time);
+		service.calendarInsert(new TripCalendarVO(id, content, time));
+		mv = calendar(mv,time);
 		return mv;
 	}
 
 	//달력 - 일정수정
 	@RequestMapping("/calendarUpdate")
-	public ModelAndView calendarUpdate(ModelAndView mv,String id,String time) {
-		mv.setViewName("/WEB-INF/calendar/calendar.jsp");
+	public ModelAndView calendarUpdate(ModelAndView mv,String time,String content) {
+		String id = (String) session.getAttribute("id");
+		service.calendarUpdate(new TripCalendarVO(id, content, time));
+		mv = calendar(mv,time);
 		return mv;
 	}	
 	
 	//달력 - 일정삭제
 	@RequestMapping("/calendarDelete")
-	public ModelAndView calendarDelete(ModelAndView mv,String id,String time) {
-		mv.setViewName("/WEB-INF/calendar/calendar.jsp");
+	public ModelAndView calendarDelete(ModelAndView mv,String time) {
+		String id = (String) session.getAttribute("id");
+		service.calendarDelete(id, time);
+		mv = calendar(mv,time);
 		return mv;
 	}	
 	

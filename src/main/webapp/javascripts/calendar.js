@@ -62,8 +62,12 @@
             }
             newDIV.classList.add("choiceDay");           // 선택된 날짜에 "choiceDay" class 추가
             dayid = newDIV.id;
+            
+            // 세션 스토리지에 dayid 저장
+    		sessionStorage.setItem("selectedDayId", dayid);
             //document.querySelector("#selectday").innerHTML="일정 : ";
             location.href="/calendar?&time="+dayid;
+            
         }
 
         // 이전달 버튼 클릭
@@ -85,3 +89,39 @@
             }
             return value;
         }
+        
+		function scheduleInsert() {
+   		const storedDayId = sessionStorage.getItem("selectedDayId"); // 세션 스토리지에서 값 가져오기
+		alert(storedDayId);
+    	if (storedDayId) {
+        	alert(storedDayId);
+       		location.href = "/calendarInsert?content=" + document.querySelector("#selectday").value + "&time=" + storedDayId;
+    	} 
+    	else {
+       		alert("날짜를 선택해주세요.");
+    	}
+		}
+        
+        function scheduleUpdate(){
+		const storedDayId = sessionStorage.getItem("selectedDayId"); // 세션 스토리지에서 값 가져오기
+		alert(storedDayId);
+    	if (storedDayId) {
+        	alert(storedDayId);
+       		location.href = "/calendarInsert?content=" + document.querySelector("#selectday").value + "&time=" + storedDayId;
+    	} 
+    	else {
+       		alert("날짜를 선택해주세요.");
+    	}	
+		}
+        
+        function scheduleDelete(){
+		const storedDayId = sessionStorage.getItem("selectedDayId"); // 세션 스토리지에서 값 가져오기
+		alert(storedDayId);
+    	if (storedDayId) {
+        	alert(storedDayId);
+       		location.href = "/calendarInsert?content=" + document.querySelector("#selectday").value + "&time=" + storedDayId;
+    	} 
+    	else {
+       		alert("날짜를 선택해주세요.");
+    	}	
+		}

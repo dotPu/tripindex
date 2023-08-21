@@ -1,14 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <link href="css/calendar.css" rel="stylesheet">
     <script src="/javascripts/calendar.js"></script>
-<head>
-    <title>달력</title>
-</head>
 
-<body>
     <div style="border:solid gray 1px">
     	<p style="text-align:center;">Today : 노란색 | Past : 다홍색 | Future : 회색</p>
     	<hr>
@@ -37,13 +32,16 @@
             </tbody>
         </table>
         <hr>
-        <p id="selectday"></p><br>
-        <button id="scheduleInsert" onclick="">일정추가</button>
-        <button id="scheduleUpdate" >일정수정</button>
-        <button id="scheduleDelete" >일정삭제</button>
+        <c:choose>
+		<c:when test="${not empty content}">
+        <input type="text" id="selectday" value="${content}"><br>
+        </c:when>
+        <c:otherwise>
+        <input type="text" id="selectday" value=""><br>
+        </c:otherwise>
+        </c:choose>
+        <button id="scheduleInsert" onclick="scheduleInsert()">일정추가</button>
+        <button id="scheduleUpdate" onclick="scheduleUpdate()" >일정수정</button>
+        <button id="scheduleDelete" onclick="scheduleDelete()" >일정삭제</button>
         
     </div>
-
-</body>
-
-</html>

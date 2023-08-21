@@ -91,6 +91,9 @@
 				</li>
 			<%}else{%>
 				<li>
+					<a href="/calendar">[달력/내일정]</a>
+				</li>
+				<li>
 					<a href="/mypage">마이페이지</a>
 				</li>
 				<li>
