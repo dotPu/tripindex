@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import dao.TripAccountVO;
+import dao.TripCalendarVO;
 import service.TripService;
 
 @Controller
@@ -224,7 +225,33 @@ public class TripController {
 		return mv;
 	}
 	
+	//달력 - 달력보기
+	@RequestMapping("/calendar")
+	public ModelAndView calendar(ModelAndView mv) {
+		mv.setViewName("/WEB-INF/calendar/calendar.jsp");
+		return mv;
+	}
+	
+	//달력 - 일정추가
+	@RequestMapping("/calendarInsert")
+	public ModelAndView calendarInsert(ModelAndView mv,TripCalendarVO vo) {
+		mv.setViewName("/WEB-INF/calendar/calendar.jsp");
+		return mv;
+	}
 
+	//달력 - 일정수정
+	@RequestMapping("/calendarUpdate")
+	public ModelAndView calendarUpdate(ModelAndView mv,String id,String time) {
+		mv.setViewName("/WEB-INF/calendar/calendar.jsp");
+		return mv;
+	}	
+	
+	//달력 - 일정삭제
+	@RequestMapping("/calendarDelete")
+	public ModelAndView calendarDelete(ModelAndView mv,String id,String time) {
+		mv.setViewName("/WEB-INF/calendar/calendar.jsp");
+		return mv;
+	}	
 	
 	//로그인 창
 	@RequestMapping("/login")

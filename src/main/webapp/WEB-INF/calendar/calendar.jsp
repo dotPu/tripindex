@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <link href="/calendar.css" rel="stylesheet">
-    <script src="/calendar.js"></script>
+    <link href="css/calendar.css" rel="stylesheet">
+    <script src="/javascripts/calendar.js"></script>
 <head>
     <title>달력</title>
 </head>
@@ -37,7 +37,11 @@
             </tbody>
         </table>
         <hr>
-        <p id="selectday"></p>
+        <p id="selectday"></p><br>
+        <button id="scheduleInsert" onclick="">일정추가</button>
+        <button id="scheduleUpdate" >일정수정</button>
+        <button id="scheduleDelete" >일정삭제</button>
+        
     </div>
 
 </body>

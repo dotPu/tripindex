@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TripCalendarMapper">
+	<insert id="calendarInsert">
+		insert into calendar values(
+		#{vo.id},
+		#{vo.content},
+		#{vo.time}
+		)
+	</insert>
+	<select id="calendarFindOneById" resultType="dao.TripCalendarVO">
+		select * from calendar where id = #{id} and time = #{time}
+	</select>
+	<update id="calendarUpdate">
+		update calendar set content = #{content} where id = #{vo.id} and #{time}
+	</update>
+	<delete id="calendarDelete">
+		delete from calendar where id = #{id} and time = #{time}
+	</delete>
+</mapper>
+	

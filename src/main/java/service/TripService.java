@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import dao.TripAccountDAO;
 import dao.TripAccountVO;
+import dao.TripCalendarDAO;
+import dao.TripCalendarVO;
 import mail.MailSender;
 
 @Service
@@ -14,6 +16,8 @@ public class TripService {
 	
 	@Autowired
 	TripAccountDAO dao;
+	@Autowired
+	TripCalendarDAO cdao;
 	
 	@Autowired
 	MailSender mail;
@@ -43,5 +47,23 @@ public class TripService {
 	public int delete(String id) {
 		return dao.delete(id);
 	}
+	
+	
+	public int calendarInsert(TripCalendarVO vo) {
+		return cdao.calendarInsert(vo);
+	}
+
+	public TripCalendarVO calendarFindOneById(String id, String time) {
+		return cdao.calendarFindOneById(id, time);
+	}
+
+	public int calendarUpdate(TripCalendarVO vo) {
+		return cdao.calendarUpdate(vo);
+	}
+
+	public int calendarDelete(String id, String time) {
+		return cdao.calendarDelete(id, time);
+	}
+	
 	
 }
