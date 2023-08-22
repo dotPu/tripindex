@@ -49,4 +49,16 @@ public class TripAccountMapperDAO implements TripAccountDAO{
 		return mapper.delete(id);
 	}
 
+	@Override
+	public String findId(String emailValue) {
+		
+		return mapper.findId(emailValue);
+	}
+
+	@Override
+	public String findPw(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

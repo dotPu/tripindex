@@ -48,6 +48,10 @@ public class TripService {
 		return dao.delete(id);
 	}
 	
+	public String findId(String emailValue) {
+		
+		return dao.findId(emailValue);
+	}
 	
 	public int calendarInsert(TripCalendarVO vo) {
 		return cdao.calendarInsert(vo);
@@ -64,6 +68,9 @@ public class TripService {
 	public int calendarDelete(String id, String time) {
 		return cdao.calendarDelete(id, time);
 	}
+
+
+
 	
 	
 }

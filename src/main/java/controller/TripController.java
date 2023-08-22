@@ -316,6 +316,14 @@ public class TripController {
 		return mv;
 	}//signupProc
 	
+	//아이디찾기
+	@RequestMapping("/findid")
+	public String findid(String emailValue) {
+		String result = service.findId(emailValue);
+		System.out.println(result);
+		return result;
+	}
+	
 	//마이페이지
 		@RequestMapping("/mypage")
 		public ModelAndView mypage(ModelAndView mv,HttpSession session) {

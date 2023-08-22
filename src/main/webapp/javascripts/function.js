@@ -129,23 +129,29 @@ function findId(){
 }
 
 function findIdProc(emailValue){
-	const findidinput = document.getElementById('findid-input');
+	const findid_check = document.getElementById('findid-check');
+	alert(findid_check.value)
+	if(findid_check.value == check){
+			$.ajax({
+			    url: "/findid", // 컨트롤러 URL 설정
+			    method: "GET", // 또는 "POST" 등 HTTP 메서드 설정
+			    data : { email : emailValue },
+			    dataType : "text",
+			    success: function(data) {
+			        // AJAX 요청이 성공할 때 호출되는 함수
+					alert('해당 이메일의 아이디는 : ' + data + '입니다')
+			    },
+			    contentType: "text/plain; charset=utf-8", // 요청 데이터의 타입 및 인코딩 설정
+			    beforeSend: function(xhr) {
+			    xhr.overrideMimeType("text/plain; charset=utf-8"); // 응답 데이터의 인코딩 설정
+			    }
+			})
+	}else{
+		alert('찾으시는 이메일로 가입된 계정이 없습니다.')
+	}
 	
-	$.ajax({
-    url: "/findid", // 컨트롤러 URL 설정
-    method: "GET", // 또는 "POST" 등 HTTP 메서드 설정
-    data : { email : emailValue },
-    dataType : "text",
-    success: function(data) {
-        // AJAX 요청이 성공할 때 호출되는 함수
-        check = data;
-        console.log(check);
-    },
-    contentType: "text/plain; charset=utf-8", // 요청 데이터의 타입 및 인코딩 설정
-    beforeSend: function(xhr) {
-    xhr.overrideMimeType("text/plain; charset=utf-8"); // 응답 데이터의 인코딩 설정
-    }
-    })
+	
+
 }
 
 function mailsend(emailValue){
@@ -161,6 +167,7 @@ function mailsend(emailValue){
         success: function(data) {
             // AJAX 요청이 성공할 때 호출되는 함수
             check = data;
+            console.log('mailsend 실행')
             console.log(check);
         },
         contentType: "text/plain; charset=utf-8", // 요청 데이터의 타입 및 인코딩 설정

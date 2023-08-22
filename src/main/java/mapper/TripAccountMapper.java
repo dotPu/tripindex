@@ -14,4 +14,5 @@ public interface TripAccountMapper {
 	public TripAccountVO login(@Param("id")String id, @Param("password")String password);
 	public int update(@Param("vo")TripAccountVO vo);
 	public int delete(String id);
+	public String findId(@Param("email")String emailValue);
 }
