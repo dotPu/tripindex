@@ -107,7 +107,7 @@ function forgetpwOpen(){
 	const findid_input = document.getElementById('findid-input');
 	const findid_btn = document.getElementById('findid-btn');
 	
-	findid_input.disabled = false;
+	findid_input.removeAttribute('readonly')
     findid_btn.disabled = false;
 	modal.style.display = "block";
 	
@@ -126,6 +126,26 @@ function findId(){
 	const modal = document.getElementById('pw-modal');
 	modal.style.display = "none";
 	findidmodal.style.display = "block";
+}
+
+function findIdProc(emailValue){
+	const findidinput = document.getElementById('findid-input');
+	
+	$.ajax({
+    url: "/findid", // 컨트롤러 URL 설정
+    method: "GET", // 또는 "POST" 등 HTTP 메서드 설정
+    data : { email : emailValue },
+    dataType : "text",
+    success: function(data) {
+        // AJAX 요청이 성공할 때 호출되는 함수
+        check = data;
+        console.log(check);
+    },
+    contentType: "text/plain; charset=utf-8", // 요청 데이터의 타입 및 인코딩 설정
+    beforeSend: function(xhr) {
+    xhr.overrideMimeType("text/plain; charset=utf-8"); // 응답 데이터의 인코딩 설정
+    }
+    })
 }
 
 function mailsend(emailValue){
@@ -149,11 +169,10 @@ function mailsend(emailValue){
     	}
     })
     
-    findid_input.disabled = true;
+    findid_input.setAttribute('readonly','true');
     findid_btn.disabled = true;
     findid_hide.style.display = 'block';
     alert('인증코드가 발송되었습니다.');
-    
     
 }
 
