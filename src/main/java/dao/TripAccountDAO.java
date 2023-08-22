@@ -9,6 +9,6 @@ public interface TripAccountDAO {
 	public TripAccountVO login(String id,String password);
 	public int update(TripAccountVO vo);
 	public int delete(String id);
-	public String findId(String emailValue);
+	public String findId(String email);
 	public String findPw(String id);
 }

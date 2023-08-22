@@ -107,8 +107,8 @@ function forgetpwOpen(){
 	const findid_input = document.getElementById('findid-input');
 	const findid_btn = document.getElementById('findid-btn');
 	
-	findid_input.removeAttribute('readonly')
-    findid_btn.disabled = false;
+	findid_input.removeAttribute('readonly');
+    findid_btn.style.display = "block";
 	modal.style.display = "block";
 	
 }
@@ -116,9 +116,10 @@ function forgetpwOpen(){
 function forgetpwClose(){
 	const modal = document.getElementById('pw-modal');
 	const findidmodal = document.getElementById('findid-modal');
+	const findpwmodal = document.getElementById('findpw-modal');
 	findidmodal.style.display = "none";
+	findpwmodal.style.display = "none";	
 	modal.style.display = "none";
-	
 }
 
 function findId(){
@@ -127,10 +128,10 @@ function findId(){
 	modal.style.display = "none";
 	findidmodal.style.display = "block";
 }
-
+//아이디 찾기 처리
 function findIdProc(emailValue){
+	const findidmodal = document.getElementById('findid-modal');
 	const findid_check = document.getElementById('findid-check');
-	alert(findid_check.value)
 	if(findid_check.value == check){
 			$.ajax({
 			    url: "/findid", // 컨트롤러 URL 설정
@@ -146,19 +147,58 @@ function findIdProc(emailValue){
 			    xhr.overrideMimeType("text/plain; charset=utf-8"); // 응답 데이터의 인코딩 설정
 			    }
 			})
+			
+			findidmodal.style.display = "none";
+			document.getElementById('findid-hide').style.display = "none";
 	}else{
 		alert('찾으시는 이메일로 가입된 계정이 없습니다.')
 	}
-	
-	
-
 }
 
+function findPw(){
+	const findpwmodal = document.getElementById('findpw-modal');
+	const modal = document.getElementById('pw-modal');
+	modal.style.display = "none";
+	findpwmodal.style.display = "block";
+}
+//비밀번호 찾기 처리 찾기 처리
+function findPwProc(idValue){
+	const findpwmodal = document.getElementById('findpw-modal');
+	const findpw_check = document.getElementById('findpw-check');
+	if(findpw_check.value == check){
+			$.ajax({
+			    url: "/findpw", // 컨트롤러 URL 설정
+			    method: "GET", // 또는 "POST" 등 HTTP 메서드 설정
+			    data : { id : idValue },
+			    dataType : "text",
+			    success: function(data) {
+			        // AJAX 요청이 성공할 때 호출되는 함수
+					alert('해당 계정의 비밀번호는 : ' + data + '입니다')
+			    },
+			    contentType: "text/plain; charset=utf-8", // 요청 데이터의 타입 및 인코딩 설정
+			    beforeSend: function(xhr) {
+			    xhr.overrideMimeType("text/plain; charset=utf-8"); // 응답 데이터의 인코딩 설정
+			    }
+			})
+			findpwmodal.style.display = "none";
+			document.getElementById('findpw-hide').style.display = "none";
+	}else{
+		alert('찾으시는 ID로 가입된 계정이 없습니다.')
+	}
+}
+
+//비밀번호 찾기(아이디,비밀번호 둘 다)에 사용도는 메일전송+코드반환받는 함수
 function mailsend(emailValue){
 	
 	const findid_input = document.getElementById('findid-input');
 	const findid_btn = document.getElementById('findid-btn');
 	const findid_hide = document.getElementById('findid-hide');
+	
+	const findpw_email = document.getElementById('findpw-email');
+	const findpw_id = document.getElementById('findpw-id');
+	const findpw_btn = document.getElementById('findpw-btn');
+	const findpw_hide = document.getElementById('findpw-hide');
+	
 	$.ajax({
         url: "/mailsend", // 컨트롤러 URL 설정
         method: "GET", // 또는 "POST" 등 HTTP 메서드 설정
@@ -177,8 +217,13 @@ function mailsend(emailValue){
     })
     
     findid_input.setAttribute('readonly','true');
-    findid_btn.disabled = true;
+    findid_btn.style.display = "none";
     findid_hide.style.display = 'block';
+    
+    findpw_email.setAttribute('readonly','true');
+    findpw_id.setAttribute('readonly','true');
+    findpw_btn.style.display = "none";
+    findpw_hide.style.display = 'block';
     alert('인증코드가 발송되었습니다.');
     
 }

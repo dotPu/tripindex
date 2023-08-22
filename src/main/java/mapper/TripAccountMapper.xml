@@ -25,6 +25,9 @@
 	<select id="findId" resultType="java.lang.String">
 		select id from tripaccount where email = #{email}
 	</select>
+	<select id="findPw" resultType="java.lang.String">
+		select password from tripaccount where id = #{id}
+	</select>
 	<update id="update">
 		update tripaccount set password = #{vo.password}, name = #{vo.name}, email = #{vo.email} where id = #{vo.id}
 	</update>

@@ -48,9 +48,13 @@ public class TripService {
 		return dao.delete(id);
 	}
 	
-	public String findId(String emailValue) {
+	public String findId(String email) {
 		
-		return dao.findId(emailValue);
+		return dao.findId(email);
+	}
+	
+	public String findPw(String id) {
+		return dao.findPw(id);
 	}
 	
 	public int calendarInsert(TripCalendarVO vo) {
@@ -68,6 +72,8 @@ public class TripService {
 	public int calendarDelete(String id, String time) {
 		return cdao.calendarDelete(id, time);
 	}
+
+
 
 
 

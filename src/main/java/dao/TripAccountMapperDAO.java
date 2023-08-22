@@ -50,15 +50,15 @@ public class TripAccountMapperDAO implements TripAccountDAO{
 	}
 
 	@Override
-	public String findId(String emailValue) {
+	public String findId(String email) {
 		
-		return mapper.findId(emailValue);
+		return mapper.findId(email);
 	}
 
 	@Override
 	public String findPw(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return mapper.findPw(id);
 	}
 
 }

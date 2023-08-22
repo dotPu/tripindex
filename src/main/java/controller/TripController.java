@@ -318,10 +318,17 @@ public class TripController {
 	
 	//아이디찾기
 	@RequestMapping("/findid")
-	public String findid(String emailValue) {
-		String result = service.findId(emailValue);
-		System.out.println(result);
+	@ResponseBody
+	public String findid(String email) {
+		String result = service.findId(email);
 		return result;
+	}
+	
+	//비밀번호찾기
+	@RequestMapping("/findpw")
+	@ResponseBody
+	public String findpw(String id) {
+		return service.findPw(id);
 	}
 	
 	//마이페이지

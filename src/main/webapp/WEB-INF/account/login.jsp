@@ -165,17 +165,18 @@
 					</div>
 				</div><!-- 이메일 입력 폼 끝 -->
 				<!-- 비밀번호 찾기 : 아이디,이메일 입력 폼 -->
-				<div id = "findid-modal" class="modal">
-					<div id="findid-modal-content" class="modal-content">
-						<h2>가입한 계정의 이메일을 입력해주세요</h2>
-						<input type="text" id="findpw-id" name="findpw-id" class="smoothborder">
-						<input type="email" id="findpw-email" name="findpw-email" class="smoothborder">
+				<div id = "findpw-modal" class="modal">
+					<div id="findpw-modal-content" class="modal-content">
+						<h2>가입한 계정의 이메일과 ID를 입력해주세요</h2>
+						<input type="email" id="findpw-email" name="findpw-email" class="smoothborder" placeholder="이메일입력">
+						<input type="text" id="findpw-id" name="findpw-id" class="smoothborder" placeholder="ID입력">
 						<input type="button" id="findpw-btn" name="findpw-btn" class="readmore" value="확인"
-						onclick="mailsend(document.getElementById('findid-input').value)">
+						onclick="mailsend(document.getElementById('findpw-email').value)">
 						<br><br>
-						<div id = "findid-hide">
-							<input type="text" id="findid-check" name="findid-check" class="smoothborder">
-							<input type="button" id="findid-confirm" name="findid-confirm" class="readmore" value="확인">
+						<div id = "findpw-hide">
+							<input type="text" id="findpw-check" name="findpw-check" class="smoothborder" >
+							<input type="button" id="findpw-confirm" name="findpw-confirm" 
+							class="readmore" value="확인" onclick="findPwProc(document.getElementById('findpw-id').value)" >
 							<br><br>
 						</div>
 						<input type="button" onclick="forgetpwClose()" id="pwmodalclosebtn" name="pwmodalclosebtn" class="readmore" value="닫기">						
