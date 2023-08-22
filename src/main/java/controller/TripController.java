@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import dao.TripAccountVO;
 import dao.TripCalendarVO;
 import service.TripService;
@@ -227,23 +229,34 @@ public class TripController {
 	
 	//달력 - 달력보기
 	@RequestMapping("/calendar")
-	public ModelAndView calendar(ModelAndView mv,String time) {
+	public String calendar() {
+		return "/WEB-INF/calendar/calendarpage.jsp";
+	}
+	
+	//달력 - 달력보기
+	@RequestMapping("/calendarselect")
+	@ResponseBody
+	public String calendarselect(String time) {
 		if(time!=null) {
 		String id = (String) session.getAttribute("id");
 		System.out.println(id +","+time);
 		TripCalendarVO vo = service.calendarFindOneById(id, time);
-		if (vo != null) {
-            mv.addObject("content", vo.getContent());
-            
-        } else {
-            mv.addObject("content", null);
-        }
-		}
 		
-		mv.setViewName("/WEB-INF/calendar/calendarpage.jsp");
-		return mv;
+		if (vo != null) {
+			try {
+				System.out.println(vo.getContent());
+                return vo.getContent();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+		
+		}
+
+		return null;
 	}
 	
+	/*
 	//달력 - 일정추가
 	@RequestMapping("/calendarInsert")
 	public ModelAndView calendarInsert(ModelAndView mv,String content,String time) {
@@ -271,6 +284,7 @@ public class TripController {
 		mv = calendar(mv,time);
 		return mv;
 	}	
+	*/
 	
 	//로그인 창
 	@RequestMapping("/login")

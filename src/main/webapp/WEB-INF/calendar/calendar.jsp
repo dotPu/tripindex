@@ -32,14 +32,9 @@
             </tbody>
         </table>
         <hr>
-        <c:choose>
-		<c:when test="${not empty content}">
-        <input type="text" id="selectday" value="${content}"><br>
-        </c:when>
-        <c:otherwise>
-        <input type="text" id="selectday" value=""><br>
-        </c:otherwise>
-        </c:choose>
+        
+        <input type="text" id="selectday"><br>
+
         <button id="scheduleInsert" onclick="scheduleInsert()">일정추가</button>
         <button id="scheduleUpdate" onclick="scheduleUpdate()" >일정수정</button>
         <button id="scheduleDelete" onclick="scheduleDelete()" >일정삭제</button>

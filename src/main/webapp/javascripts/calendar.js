@@ -66,7 +66,26 @@
             // 세션 스토리지에 dayid 저장
     		sessionStorage.setItem("selectedDayId", dayid);
             //document.querySelector("#selectday").innerHTML="일정 : ";
-            location.href="/calendar?&time="+dayid;
+            $.ajax({
+        		url: "/calendarselect", // 컨트롤러 URL 설정
+       			method: "GET", // 또는 "POST" 등 HTTP 메서드 설정
+        		data : { time : dayid },
+        		dataType : "text",
+        		success: function(data) {
+            		// AJAX 요청이 성공할 때 호출되는 함수
+            		console.log("데이터" + data);
+            		if(data != ""){
+						document.querySelector("#selectday").value = data;
+					}
+					else{
+						document.querySelector("#selectday").value = "";
+					}
+        		},
+        		contentType: "text/plain; charset=utf-8", // 요청 데이터의 타입 및 인코딩 설정
+    			beforeSend: function(xhr) {
+        		xhr.overrideMimeType("text/plain; charset=utf-8"); // 응답 데이터의 인코딩 설정
+    			}
+    		})
             
         }
 
