@@ -12,7 +12,7 @@
 		select * from calendar where id = #{id} and time = #{time}
 	</select>
 	<update id="calendarUpdate">
-		update calendar set content = #{content} where id = #{vo.id} and #{time}
+		update calendar set content = #{content} where id = #{vo.id} and time = #{time}
 	</update>
 	<delete id="calendarDelete">
 		delete from calendar where id = #{id} and time = #{time}
